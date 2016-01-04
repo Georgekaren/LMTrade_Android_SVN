@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomBar"
+        android:layout_below="@id/fraHead"
+         >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_address_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+			<LinearLayout 
+			    android:id="@+id/select_address"
+        	    android:orientation="vertical"
+        	    android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+	                <TextView
+	                    android:id="@+id/payment_address_text"
+	                    style="@style/style_16_666666"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginRight="20.0dip"
+	                    android:text="@string/payLableSignNoAddressMsg" />
+		                	
+	             <TextView
+	                      android:id="@id/textAdress2"
+	                      style="@style/style_12_666666_BOLD"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:gravity="right"
+	                      android:maxWidth="200.0dip"
+	                      android:text="" />
+	                        
+	                  <TextView
+	                      android:id="@id/textAdress3"
+	                      style="@style/style_12_666666_BOLD"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:gravity="right"
+	                      android:maxWidth="200.0dip"
+	                      android:text="" />
+	                 
+	                  <TextView
+	                      android:id="@id/textAdress4"
+	                      style="@style/style_12_666666_BOLD"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:gravity="right"
+	                      android:maxWidth="200.0dip"
+	                      android:text="" />
+	                    </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+
+            </RelativeLayout>
+            
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_payType_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="5.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_payHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orderDetailLablePayType" />
+
+                <TextView
+                    android:id="@+id/payment_payValue_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_toRightOf="@id/payment_payHint_text" 
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+			<ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+			                            
+            <RelativeLayout
+                
+                android:clickable="true"
+                android:id="@+id/payment_sendTime_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_sendTimeHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orderDetailLablePfNeed" />
+
+                <TextView
+                   
+                    android:id="@+id/payment_sendTimeValue_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_toRightOf="@id/payment_sendTimeHint_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_invoice_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_invoiceHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orderDetailLableHiteInvoiceTopTitleName" />
+
+                <TextView
+                    android:id="@+id/payment_invoiceValue_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_below="@id/payment_invoiceHint_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_remark_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_remarkHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payLableSignLeaveMsg" />
+
+                <TextView
+                    android:id="@+id/payment_remarkView_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_below ="@id/payment_remarkHint_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/style_18_000000_BOLD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="2.0dip"
+                    android:paddingTop="5.0sp"
+                    android:text="@string/payLableProdDetail" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/payment_product_list"
+                android:layout_width="fill_parent"
+            	android:layout_height="200dip"
+           		android:layout_centerHorizontal="true"
+            	android:layout_margin="10.0dip"
+            	android:cacheColorHint="#00000000"
+            	android:footerDividersEnabled="false"
+            	android:headerDividersEnabled="true"
+            	android:listSelector="@anim/shape_rounded_selectable"  />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/style_14_4B4B4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5.0dip"
+                    android:text="@string/payLableProdAmoutCount" />
+
+                <TextView
+                    
+                    android:id="@+id/shopcar_total_buycount_text"
+                    style="@style/style_14_A10D0B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5.0dip"
+                    android:text="" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    style="@style/style_14_4B4B4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5.0dip"
+                    android:text="@string/payLableProdPresentExpCount" />
+
+                <TextView
+                    android:id="@+id/shopcar_total_bonus_text"
+                    style="@style/style_14_A10D0B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5.0dip"
+                    android:text="" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/style_14_4B4B4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5.0dip"
+                    android:text="@string/payLableProdMoTotal" />
+
+                <TextView
+                    android:id="@+id/shopcar_total_money_text"
+                    style="@style/style_18_A10D0B_BOLD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5.0dip"
+                    android:text="" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/ordr_submit_bottom_text"
+                style="@style/style_17_FFFFFF_BOLD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@anim/button_long"
+                android:gravity="center"
+                android:text="@string/payLableProdSubmit" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

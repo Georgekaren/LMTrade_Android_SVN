@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@id/scrLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomBar"
+        android:layout_below="@id/fraHead"
+         >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15.0dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/orderDetailLableOrderSubmit" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15.0dip" />
+
+            <LinearLayout
+                android:layout_width="290.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@anim/shape_rounded_rectangle"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="1.0dip" >
+
+                    <TextView
+                        android:id="@+id/orderid_text"
+                        style="@style/style_15_666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5.0dip"
+                        android:text="@string/orderDetailLableOrderNo" />
+                    <TextView
+                        android:id="@+id/orderid_value_text"
+                        style="@style/style_15_666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/orderid_text"
+                        android:padding="5.0dip" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="1.0dip" >
+
+                    <TextView
+                        android:id="@+id/paymoney_text"
+                        style="@style/style_15_666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5.0dip"
+                        android:text="@string/orderDetailLableProdPayAmount" />
+                    <TextView
+                        android:id="@+id/paymoney_value_text"
+                        style="@style/style_15_666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5.0dip"
+                        android:layout_toRightOf="@id/paymoney_text" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="1.0dip" >
+
+                    <TextView
+                        android:id="@+id/paytype_text"
+                        style="@style/style_15_666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5.0dip"
+                        android:text="@string/orderDetailLablePayType" />
+                    <TextView
+                        android:id="@+id/paytype_value_text"
+                        style="@style/style_15_666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5.0dip"
+                        android:layout_toRightOf="@id/paytype_text" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15.0dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/continue_shoping_text"
+                    style="@style/style_15_EBEBEB_BOLD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1.0"
+                    android:background="@anim/button_long"
+                    android:gravity="center"
+                    android:text="@string/orderDetailLableProdContinuShop" />
+
+                <TextView
+                    android:id="@+id/to_ordr_detail_text"
+                    style="@style/style_15_EBEBEB_BOLD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1.0"
+                    android:background="@anim/button_long"
+                    android:gravity="center"
+                    android:text="@string/orderDetailLableProdViewOrder" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15.0dip" />
+
+            <LinearLayout
+                android:layout_width="290.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@anim/shape_rounded_rectangle"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@id/textOrderTip"
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5.0dip"
+                    android:text="@string/orderDetailLableProdHasQuestion" />
+
+                <TextView
+                    android:id="@id/textOrderTip"
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5.0dip"
+                    android:text="@string/ordr_tel" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
