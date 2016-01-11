@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+ <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:orientation="vertical" >
+    <FrameLayout android:id="@android:id/tabcontent" android:background="@drawable/bg_white_gray" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" >
+    
+    </FrameLayout>
+      <LinearLayout android:id="@+id/frame_content_new"
+        android:layout_width="match_parent" android:layout_height="0dip"  android:visibility="gone"  android:layout_weight="1" android:orientation="vertical" />
+        <TabWidget android:id="@android:id/tabs" android:layout_width="fill_parent"  android:visibility="gone"  android:layout_height="wrap_content" android:layout_weight="1.0" />
+      
+        <LinearLayout android:orientation="horizontal" android:id="@id/basic_tab_footer" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:id="@id/tab_home_layout" style="@style/hometabview">
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+                <ImageView android:id="@id/iv_home_image"
+                    android:src="@drawable/bg_checkbox_icon_menu_0" style="@style/hometabimg" />
+                <TextView android:id="@id/tv_home_text" android:text="@string/home" style="@style/hometabtext" />
+            </LinearLayout>
+            <RelativeLayout android:id="@id/tab_discover_layout" style="@style/hometabview">
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+                <ImageView android:id="@id/iv_discover_image" android:layout_marginTop="4.5dip" android:src="@drawable/bg_checkbox_icon_menu_1" android:layout_centerHorizontal="true" style="@style/hometabimg" />
+                <TextView android:textSize="10.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_topic_tip" android:background="@drawable/circle_solid_red" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="-5.0dip" android:layout_alignRight="@id/iv_discover_image" />
+                <TextView android:id="@id/tv_discover_text" android:text="@string/find" android:layout_below="@id/iv_discover_image" android:layout_centerHorizontal="true" style="@style/hometabtext" />
+            </RelativeLayout>
+            <RelativeLayout   android:id="@id/tab_order_layout" style="@style/hometabview" >
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+                <ImageView android:id="@id/iv_order_image" android:layout_marginTop="4.5dip" android:src="@drawable/bg_checkbox_icon_menu_2" android:layout_centerHorizontal="true" style="@style/hometabimg" />
+                <TextView android:textSize="10.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_order_text_num" android:background="@drawable/circle_solid_red" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="-8.0dip" android:layout_alignRight="@id/iv_order_image" />
+                <TextView android:id="@id/tv_order_text" android:text="@string/order" android:layout_below="@id/iv_order_image" android:layout_centerHorizontal="true" style="@style/hometabtext" />
+            </RelativeLayout>
+            <LinearLayout android:id="@id/tab_mine_layout" style="@style/hometabview">
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+                <ImageView android:id="@id/iv_mine_image" android:src="@drawable/bg_checkbox_icon_menu_3" style="@style/hometabimg" />
+                <TextView android:id="@id/tv_mine_text" android:text="@string/mine" style="@style/hometabtext" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/main_tab_new_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginLeft="60dip"
+                android:layout_marginTop="1dip"
+                android:background="@drawable/tips"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </LinearLayout>
+        
+   </LinearLayout>
+ 
+ 
+    
+
+</TabHost>
