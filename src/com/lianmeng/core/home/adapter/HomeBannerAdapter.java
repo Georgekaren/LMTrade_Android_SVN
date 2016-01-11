@@ -6,7 +6,9 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.Gallery;
 import android.widget.ImageView;
 
 import com.lianmeng.core.activity.R;
@@ -60,6 +62,10 @@ public class HomeBannerAdapter extends BaseAdapter implements OnImageLoadListene
 
 	@Override
 	public View getView(int postion, View arg1, ViewGroup arg2) {
+		WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
+
+       int width = wm.getDefaultDisplay().getWidth();
+       int height = wm.getDefaultDisplay().getHeight();
 		ImageView imageView;
 		if (arg1 == null) {
 			imageView = new ImageView(context);
@@ -70,7 +76,8 @@ public class HomeBannerAdapter extends BaseAdapter implements OnImageLoadListene
 		if (drawable == null)
 			imageView.setImageResource(R.drawable.product_loading);
 		else
-			imageView.setImageDrawable(drawable);
+			imageView.setImageDrawable(drawable); 
+		//imageView.setLayoutParams(new Gallery.LayoutParams( (int) (190.0/(h/w)), 190))); 
 		imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 		imageView.setBackgroundResource(R.drawable.home_backgroud);
 		return imageView;

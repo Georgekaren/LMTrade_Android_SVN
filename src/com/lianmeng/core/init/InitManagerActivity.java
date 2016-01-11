@@ -29,6 +29,8 @@ import com.lianmeng.core.framework.util.Logger;
 import com.lianmeng.core.framework.util.NetUtil;
 import com.lianmeng.core.framework.util.ThreadPoolManager;
 import com.lianmeng.core.home.activity.HomeActivity;
+import com.lianmeng.core.home.activity.HomeNewActivity;
+import com.lianmeng.core.home.activity.MainActivity;
 import com.lianmeng.core.version.parser.VersionParser;
 import com.lianmeng.core.version.vo.Version;
 import com.lianmeng.core.version.vo.VersionVo;
@@ -170,7 +172,7 @@ public class InitManagerActivity extends Activity implements Runnable, DownlaodL
 		 * 进入主页
 		 */
 		private void gotoHome() {
-			Intent intent = new Intent(this, HomeActivity.class);
+			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);
 			finish();
 		}

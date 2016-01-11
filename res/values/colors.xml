@@ -14,4 +14,23 @@
     <color name="home_item_normal">#fff2f2f2</color>
     <color name="editText">#AAAAAA</color>
     <color name="blue">#008dff</color>
+    
+    <color name="transparent">#00000000</color>
+    <color name="ltgray">#ffcccccc</color>
+    <color name="bottom_buy_color">#d9000000</color>
+    <color name="bottom_tab_click_color">#ffe74c3c</color>
+    <color name="bottom_tab_color">#ff9f9f9f</color>
+    <color name="bottom_tab_color_n">#ff989898</color>
+    <color name="bg_gray">#FFE3E3E7</color>
+    <color name="whiteGray">#ffC9CACB</color>
+    <color name="main_bg_clolor">#ffefefef</color>
+    
+     
+    <color name="background">#FFE3E3E7</color>
+    <color name="title_color">#333333</color>
+    
+    <!-- 灰色 -->
+    <color name="bg_Gray">#CCCCCC</color>
+    <!-- 黑色 -->
+    <color name="tv_Black">#000000</color>
 </resources>

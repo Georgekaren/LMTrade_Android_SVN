@@ -50,6 +50,7 @@
         <activity
             android:name="com.lianmeng.core.home.activity.HomeActivity"
             android:launchMode="singleTask" />
+        <activity android:name="com.lianmeng.core.home.activity.HomeNewActivity" android:launchMode="singleTask" />
            <!-- 分类 -->
         <activity
             android:name="com.lianmeng.core.category.activity.CategoryActivity"
@@ -161,7 +162,18 @@
         <!-- 银联支付 sdk -->
         <activity android:name="com.unionpay.uppay.PayActivity" >
         </activity>
+        
+        
+        
+        <activity  android:name="com.lianmeng.core.home.activity.MainActivity"></activity>
+        <activity  android:name="com.lianmeng.core.home.activity.AddExamActivity"></activity>
+         <activity  android:name="com.lianmeng.core.home.activity.MyExamActivity"></activity>
+          <activity  android:name="com.lianmeng.core.home.activity.MyMessageActivity"></activity>
+           <activity  android:name="com.lianmeng.core.home.activity.SettingActivity"></activity>
+         <activity  android:name="com.lianmeng.core.home.activity.RefreshableView"></activity>
+         <activity  android:name="com.lianmeng.core.home.activity.XScrollViewActivity"></activity>
          
+           
     </application>
 
 </manifest>

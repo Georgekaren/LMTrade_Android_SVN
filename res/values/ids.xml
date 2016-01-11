@@ -572,4 +572,31 @@
     <item type="id" name="bottomSpace">false</item>
     <item type="id" name="promBulldtinLv">false</item>
     <item type="id" name="textMarketPrice">false</item>
+    
+    
+     <item type="id" name="basic_tab_footer">false</item>
+     <item type="id" name="tab_home_layout">false</item>
+     <item type="id" name="iv_home_image">false</item>
+    <item type="id" name="tv_home_text">false</item>
+    <item type="id" name="tab_discover_layout">false</item>
+    <item type="id" name="iv_discover_image">false</item>
+    <item type="id" name="tv_topic_tip">false</item>
+    <item type="id" name="tv_discover_text">false</item>
+    <item type="id" name="tab_order_layout">false</item>
+    <item type="id" name="iv_order_image">false</item>
+    <item type="id" name="tv_order_text_num">false</item>
+    <item type="id" name="tv_order_text">false</item>
+    <item type="id" name="tab_mine_layout">false</item>
+    <item type="id" name="iv_mine_image">false</item>
+    <item type="id" name="tv_mine_text">false</item>
+    <item type="id" name="tab_home_container">false</item>
+    <item type="id" name="parent_view">false</item>
+    <item type="id" name="pull">false</item>
+    <item type="id" name="iv_left">false</item>
+    <item type="id" name="ll_title">false</item>
+    <item type="id" name="iv_right">false</item>
+    <item type="id" name="mid_title">false</item>
+    <item type="id" name="tv_foot_title">false</item>
+    <item type="id" name="pb_foot_refreshing">false</item>
+    <item type="id" name="tv_head_title">false</item>
 </resources>

@@ -354,9 +354,11 @@
 
     <style name="MGallery" parent="@android:style/Widget.Gallery">
         <item name="android:fadingEdge">none</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:spacing">1dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:spacing">20dip</item>
         <item name="android:unselectedAlpha">1</item>
+        <item name="android:bottom">3dp</item> 
     </style>
     
     <style name="mSrollView" >
@@ -412,4 +414,38 @@
     <style name="GrayBoaderButton" parent="BoaderButton">
         <item name="android:background">@drawable/gray_btn</item>
     </style>
+    
+    
+    <style name="hometabview">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">4.0dip</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="hometabimg">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">30.0dip</item>
+        <item name="android:layout_height">30.0dip</item>
+        <item name="android:layout_marginTop">4.0dip</item>
+    </style>
+    <style name="hometabtext">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">@color/bottom_tab_color_n</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">-4.0dip</item>
+    </style>
+    
+    
+    <style name="Platform.ThemeOverlay.AppCompat.Dark" parent="">
+         <item name="actionBarItemBackground">@drawable/abc_item_background_holo_dark</item>
+         <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
+    </style>
+    <style name="Platform.ThemeOverlay.AppCompat.Light" parent="">
+        <item name="actionBarItemBackground">@drawable/abc_item_background_holo_light</item>
+         <item name="selectableItemBackground">@drawable/abc_item_background_holo_light</item>
+    </style>
+         
 </resources>
