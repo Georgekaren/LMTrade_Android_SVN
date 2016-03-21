@@ -5,21 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.lianmeng.core.activity.R;
-import com.lianmeng.core.activity.R.drawable;
-import com.lianmeng.core.activity.R.id;
-import com.lianmeng.core.activity.R.layout;
-import com.lianmeng.core.activity.R.string;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysvo.RequestVo;
-import com.lianmeng.core.framework.util.Constant;
+
 import com.lianmeng.core.framework.util.Logger;
 import com.lianmeng.core.product.adapter.ProductLvAdapter;
 import com.lianmeng.core.product.parser.ProductListParser;
 import com.lianmeng.core.product.vo.ProductListVo;
-import com.lianmeng.extand.lianmeng.product.activity.BulletinActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -30,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ProductListActivity extends BaseWapperActivity {
+public class ProductListActivity extends BaseWapperNewActivity {
 
 	private static final String TAG = "ProductListActivity";
 
@@ -54,25 +47,22 @@ public class ProductListActivity extends BaseWapperActivity {
 	////////////////////
 	private Map<String, Object> mapAllResult;
 	/////////////////
-	@Override
+	/*@Override
 	public void onClick(View v) {
 		
 		switch (v.getId()) {
 		case R.id.backTv:
-			Intent backIntent = new Intent(ProductListActivity.this,
-					BulletinActivity.class);
-			startActivity(backIntent);
-			break;
+			
 		case R.id.textRankSale:
 			orderby = "sale_down";
 			
-			/**
+			*//**
 			 * tv_prodlist_ranksale;
 	 			tv_prodlist_rankprice;
 	 			tv_prodlist_rankgood;
 				tv_prodlist_ranktime;
 				lv_prodlist_listprod;
-			 */
+			 *//*
 			tv_prodlist_rankprice.setBackgroundResource(R.drawable.segment_normal_2_bg);
 			tv_prodlist_ranksale.setBackgroundResource(R.drawable.segment_selected_1_bg);
 			tv_prodlist_ranktime.setBackgroundResource(R.drawable.segment_normal_2_bg);
@@ -83,13 +73,13 @@ public class ProductListActivity extends BaseWapperActivity {
 		case R.id.textRankPrice:
 			//可以保持用户以前设置的排序方式，提高用户体验
 			
-			/**
+			*//**
 			 * tv_prodlist_ranksale;
 	 			tv_prodlist_rankprice;
 	 			tv_prodlist_rankgood;
 				tv_prodlist_ranktime;
 				
-			 */
+			 *//*
 			if(rankUp){
 				orderby = "price_up";
 				Editor editor = sp.edit();
@@ -127,7 +117,7 @@ public class ProductListActivity extends BaseWapperActivity {
 		default:
 			break;
 		}
-	}
+	}*/
 
 	@Override
 	protected void onHeadRightButton(View v) {
@@ -147,7 +137,7 @@ public class ProductListActivity extends BaseWapperActivity {
 			siftsize = data.getStringExtra("filterSize");
 			filterData =data.getStringExtra("filter");
 			getRankSaleData(orderby,filterData);
-			selectedBottomTab(Constant.CLASSIFY);
+			
 			System.out.println(filterData);
 		}
 		
@@ -239,12 +229,12 @@ public class ProductListActivity extends BaseWapperActivity {
 		
 	
 		setTitle(getString(R.string.prodListTitleTitleNameMsg));
-		setHeadRightText(getString(R.string.prodListTitleFilterHeadNameMsg));
+		/*setHeadRightText(getString(R.string.prodListTitleFilterHeadNameMsg));
 		setHeadRightVisibility(View.VISIBLE);
 		tv_prodlist_ranksale.setOnClickListener(this);
 		tv_prodlist_rankprice.setOnClickListener(this);
 		tv_prodlist_rankgood.setOnClickListener(this);
-		tv_prodlist_ranktime.setOnClickListener(this);
+		tv_prodlist_ranktime.setOnClickListener(this);*/
 	}
 
 	@Override
@@ -257,7 +247,7 @@ public class ProductListActivity extends BaseWapperActivity {
 		 * private ListView tv_prodlist_listprod; private ImageView
 		 * iv_prodlist_noresult; private TextView tv_prodlist_noresult;
 		 */
-		setContentView(R.layout.product_list_activity);
+		setContentView(R.layout.old_act_product_list_activity);
 		sp = getSharedPreferences("config", MODE_PRIVATE);
 		
 		rankUp = sp.getBoolean("productrank", false);
@@ -267,7 +257,7 @@ public class ProductListActivity extends BaseWapperActivity {
 			editor.commit();
 		}
 		
-		selectedBottomTab(Constant.CLASSIFY);
+	//selectedBottomTab(Constant.CLASSIFY);
 	}
 
 	@Override

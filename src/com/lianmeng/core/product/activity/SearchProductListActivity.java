@@ -16,15 +16,15 @@ import com.lianmeng.core.activity.R;
 import com.lianmeng.core.activity.R.id;
 import com.lianmeng.core.activity.R.layout;
 import com.lianmeng.core.activity.R.string;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.Constant;
 import com.lianmeng.core.product.adapter.ProductAdapter;
 import com.lianmeng.core.product.parser.SearchParser;
 import com.lianmeng.core.product.vo.ProductListVo;
 
-public class SearchProductListActivity extends BaseWapperActivity implements OnItemClickListener {
+public class SearchProductListActivity extends BaseWapperNewActivity implements OnItemClickListener {
 	private TextView textRankSale;
 	private TextView textRankPrice;
 	private TextView textRankGood;
@@ -117,8 +117,8 @@ public class SearchProductListActivity extends BaseWapperActivity implements OnI
 
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.search_product_list);
-		selectedBottomTab(Constant.SEARCH);
+		setContentView(R.layout.old_act_search_product_list);
+		//selectedBottomTab(Constant.SEARCH);
 	}
 
 	@Override
@@ -164,10 +164,10 @@ public class SearchProductListActivity extends BaseWapperActivity implements OnI
 	}
 	@Override
 	protected void setListener() {
-		textRankSale.setOnClickListener(this);
-		textRankPrice.setOnClickListener(this);
-		textRankGood.setOnClickListener(this);
-		textRankTime.setOnClickListener(this);
+		//textRankSale.setOnClickListener(this);
+		//textRankPrice.setOnClickListener(this);
+		//textRankGood.setOnClickListener(this);
+		//textRankTime.setOnClickListener(this);
 		productList.setOnItemClickListener(this);
 
 	}

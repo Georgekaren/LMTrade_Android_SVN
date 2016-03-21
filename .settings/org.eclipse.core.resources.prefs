@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/com/lianmeng/core/home/activity/EatProgressBar.java=UTF-8
+encoding//src/com/lianmeng/extand/lianmeng/product/activity/RestaurantDetailActivity.java=UTF-8
+encoding//src/com/lianmeng/extand/lianmeng/product/adapter/RestaurantDetailAdapter.java=UTF-8
+encoding//src/com/lianmeng/extand/lianmeng/product/widget/ClearEditTextView.java=UTF-8
 encoding/<project>=UTF-8

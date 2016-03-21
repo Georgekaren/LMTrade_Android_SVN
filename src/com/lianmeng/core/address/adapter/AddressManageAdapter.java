@@ -49,7 +49,7 @@ public class AddressManageAdapter extends ArrayWapperAdapter<AddressDetail> impl
  		View view;
 		AddressManageViewHoler holer;
 		if (convertView == null) {
-			view = inflater.inflate(R.layout.address_manage_listitem, null);
+			view = inflater.inflate(R.layout.old_adapter_address_manage_listitem, null);
 			holer = new AddressManageViewHoler();
 			holer.receiver = (TextView) view.findViewById(R.id.address_listitem_receiver_text);
 			holer.phone = (TextView) view.findViewById(R.id.address_listitem_phone_text);

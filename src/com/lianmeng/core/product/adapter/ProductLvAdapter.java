@@ -58,7 +58,7 @@ public class ProductLvAdapter extends ImageAsyncLoaderAdpter<ProductListVo> {
 		ProductListVo prodInfo = prodInfos.get(position);
 		View view;
 		if(convertView == null){
-			view = View.inflate(context, R.layout.product_list_items, null);
+			view = View.inflate(context, R.layout.old_adapter_product_list_items, null);
 		}else{
 			view = convertView;
 		}

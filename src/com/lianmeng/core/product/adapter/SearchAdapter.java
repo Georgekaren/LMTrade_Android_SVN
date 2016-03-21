@@ -44,13 +44,13 @@ public class SearchAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if(position==0){
-			TextView tv = (TextView) View.inflate(context, R.layout.search_item, null);
+			TextView tv = (TextView) View.inflate(context, R.layout.old_adapter_search_item, null);
 			tv.setTextSize(35);
 			tv.setTextColor(Color.RED);
 			tv.setText(this.context.getString(R.string.searchProdTitleHotButtonNameMsg));
 			return tv;		
 		}
-		TextView tv_content =  (TextView) View.inflate(context, R.layout.search_item, null);
+		TextView tv_content =  (TextView) View.inflate(context, R.layout.old_adapter_search_item, null);
 			tv_content.setTextColor(Color.BLACK);	
 			tv_content.setText("   "+search.get(position-1).getName());
 			

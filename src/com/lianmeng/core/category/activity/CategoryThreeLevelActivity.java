@@ -10,8 +10,8 @@ import com.lianmeng.core.activity.R.string;
 import com.lianmeng.core.category.adapter.CategoryAdaper;
 import com.lianmeng.core.category.parser.CategoryParser;
 import com.lianmeng.core.category.vo.CategoryVo;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.Constant;
 import com.lianmeng.core.framework.util.DivideCategoryList;
@@ -25,17 +25,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class CategoryThreeLevelActivity extends BaseWapperActivity {
+public class CategoryThreeLevelActivity extends BaseWapperNewActivity {
 
 	protected static final String TAG = "CategoryThreeLevelActivity";
 	private List<CategoryVo> categoryInfos;
 	private DivideCategoryList divide;
 	private String twoLevelID ;
 	private ListView lv_category_list;
-	@Override
-	public void onClick(View v) {
-		
-	}
+	
 
 	@Override
 	protected void findViewById() {
@@ -47,10 +44,10 @@ public class CategoryThreeLevelActivity extends BaseWapperActivity {
 
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.category_child_activity);
+		setContentView(R.layout.old_act_category_child_activity);
 		setTitle(R.string.category_view);
 		twoLevelID = getIntent().getStringExtra("twoLevelID");
-		selectedBottomTab(Constant.CLASSIFY);
+		
 	}
 
 	@Override

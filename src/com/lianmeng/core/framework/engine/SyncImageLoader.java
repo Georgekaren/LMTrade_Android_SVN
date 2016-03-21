@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.lianmeng.core.activity.R;
 import com.lianmeng.core.framework.application.ECApplication;
 import com.lianmeng.core.framework.util.Logger;
 import com.lianmeng.core.framework.util.MD5;
@@ -147,6 +148,8 @@ public class SyncImageLoader {
 		InputStream in = null;
 		OutputStream out = null;
 		try {
+			 
+			
 			File f = new File(ECApplication.getCacheDirPath(), MD5.digest(url));
 			if (f.exists()) {
 				Logger.d(TAG, "缓存　" + f.getAbsolutePath());

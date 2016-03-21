@@ -18,7 +18,7 @@ public class SysU {
      */
     public static final long BEGIN_TIME_LONG = 1335189632954L;
     
-    public static final String USERID="1";
+    public static String USERID=null;
     
     public static final String payLableProdRequestErro="请求出错";
     public static final String payLableProdCheckUrl="请检查URL";

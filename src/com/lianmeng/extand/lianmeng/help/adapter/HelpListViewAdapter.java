@@ -56,7 +56,7 @@ public class HelpListViewAdapter extends BaseAdapter {
 		if (convertView == null) {
 
 			rl_item = (RelativeLayout) View.inflate(context,
-					R.layout.category_child_item, null);
+					R.layout.old_act_help_category_child_item, null);
 		} else {
 			rl_item = (RelativeLayout) convertView;
 		}

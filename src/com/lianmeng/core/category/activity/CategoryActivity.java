@@ -14,8 +14,8 @@ import com.lianmeng.core.activity.R.string;
 import com.lianmeng.core.category.adapter.CategoryAdaper;
 import com.lianmeng.core.category.parser.CategoryParser;
 import com.lianmeng.core.category.vo.CategoryVo;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.Constant;
 import com.lianmeng.core.framework.util.DivideCategoryList;
@@ -28,7 +28,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
 
-public class CategoryActivity extends BaseWapperActivity {
+public class CategoryActivity extends BaseWapperNewActivity {
 
 	private static final String TAG = "CategoryActivity";
 	private ListView lv_category_list;
@@ -37,11 +37,6 @@ public class CategoryActivity extends BaseWapperActivity {
 	List<CategoryVo> oneInfos ;
 
 	private DivideCategoryList divide;
-//	private 
-	@Override
-	public void onClick(View v) {
-
-	}
 
 	@Override
 	protected void findViewById() {
@@ -59,11 +54,8 @@ public class CategoryActivity extends BaseWapperActivity {
 
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.category_activity);
-	//	setTitle(R.string.category_view);
+		setContentView(R.layout.old_act_category_activity);
 		setTitle(R.string.category_view);
-		setHeadLeftVisibility(View.INVISIBLE);
-		selectedBottomTab(Constant.CLASSIFY);
 	}
 
 	@Override

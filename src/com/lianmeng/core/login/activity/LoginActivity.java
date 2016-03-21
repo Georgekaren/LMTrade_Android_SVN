@@ -1,29 +1,13 @@
 package com.lianmeng.core.login.activity;
 
-import java.util.HashMap;
-
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.lianmeng.core.account.activity.AccountActivity;
 import com.lianmeng.core.activity.R;
-import com.lianmeng.core.activity.R.id;
-import com.lianmeng.core.activity.R.layout;
-import com.lianmeng.core.activity.R.string;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
-import com.lianmeng.core.framework.sysvo.RequestVo;
-import com.lianmeng.core.framework.util.CommonUtil;
-import com.lianmeng.core.login.parser.LoginParser;
-import com.lianmeng.core.login.vo.UserInfo;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
 
-public class LoginActivity extends BaseWapperActivity {
+public class LoginActivity extends BaseWapperNewActivity {
 	private EditText login_name_edit;
 	private EditText login_pwd_edit;
 	private TextView login_text;
@@ -45,7 +29,7 @@ public class LoginActivity extends BaseWapperActivity {
 
 	protected void loadViewLayout() {
 		sp = getSharedPreferences("userinfo", MODE_PRIVATE);
-		setContentView(R.layout.login_activity);
+		setContentView(R.layout.act_login_old);
 		setTitle(getString(R.string.loginTitleLoginButtonNameMsg));
 	}
 
@@ -60,7 +44,13 @@ public class LoginActivity extends BaseWapperActivity {
 
 	}
 
-	protected void setListener() {
+    @Override
+    protected void setListener() {
+        // TODO Auto-generated method stub
+        
+    }
+
+	/*protected void setListener() {
 		login_text.setOnClickListener(this);
 		register_text.setOnClickListener(this);
 	}
@@ -117,7 +107,7 @@ public class LoginActivity extends BaseWapperActivity {
 						if (isnotLogin) {
 							setResult(LOGIN_SUCCESS);
 						} else {
-							Intent intent = new Intent(LoginActivity.this, AccountActivity.class);
+							Intent intent = new Intent(LoginActivity.this, RestaurantAccountActivity.class);
 							startActivity(intent);
 						}
 						finish();
@@ -135,5 +125,5 @@ public class LoginActivity extends BaseWapperActivity {
 			break;
 
 		}
-	}
+	}*/
 }

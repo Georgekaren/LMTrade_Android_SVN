@@ -9,19 +9,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.lianmeng.core.account.activity.AccountActivity;
+import com.lianmeng.core.account.activity.RestaurantAccountActivity;
 import com.lianmeng.core.activity.R;
 import com.lianmeng.core.activity.R.id;
 import com.lianmeng.core.activity.R.layout;
 import com.lianmeng.core.activity.R.string;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.CommonUtil;
 import com.lianmeng.core.login.parser.LoginParser;
 import com.lianmeng.core.login.vo.UserInfo;
 
-public class RegisterActivity extends BaseWapperActivity {
+public class RegisterActivity extends BaseWapperNewActivity {
 	private EditText login_name_edit;
 	private EditText login_pwd_edit;
 	private EditText login_pwd2_edit;
@@ -86,7 +86,7 @@ public class RegisterActivity extends BaseWapperActivity {
 
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.register_activity);
+		setContentView(R.layout.old_act_login_register);
 		sp = getSharedPreferences("userinfo", MODE_PRIVATE);
 		setTitle(getString(R.string.loginButtonRegisteNameMsg));
 	}
@@ -104,7 +104,7 @@ public class RegisterActivity extends BaseWapperActivity {
 				ed.putString("userId", userId);
 				ed.putString("usersession", usersession);
 				ed.commit();
-				Intent intent = new Intent (RegisterActivity.this,AccountActivity.class);
+				Intent intent = new Intent (RegisterActivity.this,RestaurantAccountActivity.class);
 				startActivity(intent);
 				closeProgressDialog();
 				
@@ -116,7 +116,7 @@ public class RegisterActivity extends BaseWapperActivity {
 
 	@Override
 	protected void setListener() {
-		register_text.setOnClickListener(this);
+		//register_text.setOnClickListener(this);
 
 	}
 

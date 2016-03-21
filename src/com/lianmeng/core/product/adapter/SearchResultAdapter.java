@@ -65,7 +65,7 @@ public class SearchResultAdapter extends BaseAdapter {
 		}else{
 			LayoutInflater inflater = (LayoutInflater)context.getSystemService 
 				      (Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.product_list_items, null);
+			convertView = inflater.inflate(R.layout.old_adapter_product_list_items, null);
 			holderView = new HolderView();
 			convertView.setTag(holderView);
 			//������Ӧ

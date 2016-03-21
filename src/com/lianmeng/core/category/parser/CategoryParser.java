@@ -9,10 +9,6 @@ import com.alibaba.fastjson.JSON;
 import com.lianmeng.core.category.vo.CategoryVo;
 import com.lianmeng.core.framework.sysparser.BaseParser;
 
-
-
-
-
 public class CategoryParser extends BaseParser<List<CategoryVo>> {
 
 	@Override

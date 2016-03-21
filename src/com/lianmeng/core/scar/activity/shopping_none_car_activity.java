@@ -1,9 +1,7 @@
 package com.lianmeng.core.scar.activity;
 
 import com.lianmeng.core.activity.R;
-import com.lianmeng.core.activity.R.id;
-import com.lianmeng.core.activity.R.layout;
-import com.lianmeng.core.framework.sysactivity.BaseActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
 import com.lianmeng.core.product.activity.ProductDetailActivity;
 
 import android.content.Intent;
@@ -11,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public class shopping_none_car_activity extends BaseActivity {
+public class shopping_none_car_activity extends BaseWapperNewActivity implements View.OnClickListener {
 	TextView shopcar_toBuy_text ;
 	@Override
 	public void onClick(View v) {
@@ -27,7 +25,7 @@ public class shopping_none_car_activity extends BaseActivity {
 
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.shopping_none_car_activity);
+		setContentView(R.layout.old_act_shopping_none_car);
 
 	}
 

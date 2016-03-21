@@ -7,7 +7,7 @@ import com.lianmeng.core.activity.R.id;
 import com.lianmeng.core.activity.R.layout;
 import com.lianmeng.core.activity.R.string;
 import com.lianmeng.core.framework.service.IECManager;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
 import com.lianmeng.core.framework.util.Constant;
 import com.lianmeng.core.product.adapter.ProductAdapter;
 import com.lianmeng.core.product.vo.ProdcutHistory;
@@ -24,16 +24,13 @@ import android.widget.ListView;
  * @author liu
  *
  */
-public class ProductHistoryActivity extends BaseWapperActivity implements OnItemClickListener {
+public class ProductHistoryActivity extends BaseWapperNewActivity implements OnItemClickListener {
 
 	private ListView mListView;
 	private IECManager ecManager;
 	private ProductAdapter productAdapter;
 
-	@Override
-	public void onClick(View v) {
-
-	}
+	 
 
 	@Override
 	protected void findViewById() {
@@ -42,10 +39,8 @@ public class ProductHistoryActivity extends BaseWapperActivity implements OnItem
 
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.simple_listview);
-		setHeadRightText(R.string.clear);
-		setHeadRightVisibility(View.VISIBLE);
-		selectedBottomTab(Constant.MORE);
+		setContentView(R.layout.old_act_product_hist_listview);
+		
 		ecManager = getECManager();
 	}
 
@@ -61,7 +56,7 @@ public class ProductHistoryActivity extends BaseWapperActivity implements OnItem
 			productAdapter.addAll(histories);
 			mListView.setAdapter(productAdapter);
 		} else {
-			setContentView(R.layout.empty);
+			setContentView(R.layout.old_act_product_his_empty);
 		}
 	}
 	
@@ -74,7 +69,7 @@ public class ProductHistoryActivity extends BaseWapperActivity implements OnItem
 	@Override
 	protected void onHeadRightButton(View v) {
 		ecManager.clearProductHistory();
-		setContentView(R.layout.empty);
+		setContentView(R.layout.old_act_product_his_empty);
 	}
 	
 	@Override

@@ -8,7 +8,7 @@ package com.lianmeng.core.order.vo;
 public class CheckoutAddup {
 
 	/** 商品数量总计 */
-	private double total_count;
+	private int total_count;
 
 	/** 商品金额总计 */
 	private double total_price;
@@ -34,11 +34,11 @@ public class CheckoutAddup {
 		this.prom_cut = prom_cut;
 	}
 
-	public double getTotal_count() {
+	public int getTotal_count() {
 		return total_count;
 	}
 
-	public void setTotal_count(double total_count) {
+	public void setTotal_count(int total_count) {
 		this.total_count = total_count;
 	}
 

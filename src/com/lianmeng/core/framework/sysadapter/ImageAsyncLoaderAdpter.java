@@ -42,7 +42,7 @@ public class ImageAsyncLoaderAdpter<T> extends ArrayWapperAdapter<T> {
 		if(iImageUrl!=null&&!iImageUrl.startsWith("http")){
 			iImageUrl=getContext().getString(R.string.sysRequestHost)+imageUrl;
 		}
-		syncImageLoader.loadImage(t, imageUrl, imageLoadListener);
+		syncImageLoader.loadImage(t, iImageUrl, imageLoadListener);
 	}
 
 	public void onImageLoadFinish(Integer position, Drawable drawable) {

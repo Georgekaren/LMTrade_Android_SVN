@@ -1,25 +1,15 @@
 package com.lianmeng.core.scar.adapter;
 
-import java.util.HashMap;
 import java.util.List;
 
 import com.lianmeng.core.activity.R;
 import com.lianmeng.core.address.adapter.AddressManageAdapter.OnItemButtonListener;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
-import com.lianmeng.core.framework.sysparser.SuccessParser;
-import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.ImageUtil;
 import com.lianmeng.core.framework.util.ImageUtil.ImageCallback;
-import com.lianmeng.core.product.activity.ProductDetailActivity;
-import com.lianmeng.core.scar.activity.ShoppingCarActivity;
 import com.lianmeng.core.scar.vo.Cart;
 import com.lianmeng.core.scar.vo.CartProduct;
 
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,13 +17,10 @@ import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ShoppingCarAdapter extends BaseAdapter  implements OnClickListener {
 	private Context context;
-	private Cart cart;
 	private List<CartProduct> productlist;
 	private CartProduct cartProduct;
 	private OnItemButtonListener listener;
@@ -46,7 +33,6 @@ public class ShoppingCarAdapter extends BaseAdapter  implements OnClickListener 
 	public ShoppingCarAdapter(Context context, Cart cart) {
 		super();
 		this.context = context;
-		this.cart = cart;
 		productlist = cart.productlist;
 	}
 
@@ -73,9 +59,8 @@ public class ShoppingCarAdapter extends BaseAdapter  implements OnClickListener 
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		final int fposition=position;
 		View view = new View(context);
-		view = View.inflate(context, R.layout.shopping_car_listitem, null);
+		view = View.inflate(context, R.layout.old_adapter_shopping_car_listitem, null);
 		
 		cartProduct = productlist.get(position);
 		selPosi=position;

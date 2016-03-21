@@ -50,7 +50,7 @@ public class ProductFilterAdapter extends BaseAdapter {
 		f = filter.get(position);
 		if(convertView == null){
 			holder = new HolderView();
-			convertView = View.inflate(context, R.layout.sift_prod_items, null);
+			convertView = View.inflate(context, R.layout.old_adapter_product_filter_sift_items, null);
 			convertView.setTag(holder);
 		}else{
 			holder = (HolderView) convertView.getTag();

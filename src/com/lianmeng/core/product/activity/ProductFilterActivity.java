@@ -8,8 +8,8 @@ import com.lianmeng.core.activity.R.id;
 import com.lianmeng.core.activity.R.layout;
 import com.lianmeng.core.activity.R.string;
 import com.lianmeng.core.category.vo.FilterCategory;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.Constant;
 import com.lianmeng.core.framework.util.Logger;
@@ -30,7 +30,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ProductFilterActivity extends BaseWapperActivity {
+public class ProductFilterActivity extends BaseWapperNewActivity {
 
 	private static final String TAG = "ProductFilterActivity";
  	private ListView lv_sift_list;
@@ -40,10 +40,10 @@ public class ProductFilterActivity extends BaseWapperActivity {
 
 	private int filterSize=0;
 	
-	@Override
+	/*@Override
 	public void onClick(View v) {
 	 
-	}
+	}*/
 
 	@Override
 	protected void findViewById() {
@@ -74,11 +74,11 @@ public class ProductFilterActivity extends BaseWapperActivity {
 	
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.sift_prod_activity);
+		setContentView(R.layout.old_act_product_filter_sift);
 		setTitle(getString(R.string.prodListTitleProdFilterMsg));
-		setHeadRightText(getString(R.string.prodListTitleProdFilterMsg));
-		setHeadRightVisibility(View.VISIBLE);
-		selectedBottomTab(Constant.CLASSIFY);
+		//setHeadRightText(getString(R.string.prodListTitleProdFilterMsg));
+		//setHeadRightVisibility(View.VISIBLE);
+		//selectedBottomTab(Constant.CLASSIFY);
 		cId = getIntent().getStringExtra("cId");
 		sp = getSharedPreferences("config", MODE_PRIVATE);
 	}

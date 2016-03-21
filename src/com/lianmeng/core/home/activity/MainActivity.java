@@ -2,7 +2,10 @@ package com.lianmeng.core.home.activity;
 
 
 
+import com.lianmeng.core.account.activity.RestaurantAccountActivity;
 import com.lianmeng.core.activity.R;
+import com.lianmeng.core.order.activity.RestaurantOrderListActivity;
+import com.lianmeng.extand.lianmeng.discover.activity.ZoneActivity;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -13,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
-import android.widget.TextView;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity {
@@ -24,28 +26,28 @@ public class MainActivity extends TabActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.frame8tian);
+        setContentView(R.layout.act_main_down_menu);
         
         
         tabHost=this.getTabHost();
         TabHost.TabSpec spec;
         Intent intent;
 
-        intent=new Intent().setClass(this, AddExamActivity.class);
+        intent=new Intent().setClass(this, HomeActivity.class);
          
         spec=tabHost.newTabSpec(getString(R.string.home)).setIndicator(getString(R.string.home)).setContent(intent);
         tabHost.addTab(spec);
         
-        intent=new Intent().setClass(this,MyExamActivity.class);
+        intent=new Intent().setClass(this,ZoneActivity.class);
         spec=tabHost.newTabSpec(getString(R.string.find)).setIndicator(getString(R.string.find)).setContent(intent);
         tabHost.addTab(spec);
         
-        intent=new Intent().setClass(this, MyMessageActivity.class);
+        intent=new Intent().setClass(this, RestaurantOrderListActivity.class);
         spec=tabHost.newTabSpec(getString(R.string.order)).setIndicator(getString(R.string.order)).setContent(intent);
         tabHost.addTab(spec);
         
      
-        intent=new Intent().setClass(this, SettingActivity.class);
+        intent=new Intent().setClass(this, RestaurantAccountActivity.class);
         spec=tabHost.newTabSpec(getString(R.string.mine)).setIndicator(getString(R.string.mine)).setContent(intent);
         tabHost.addTab(spec);
         

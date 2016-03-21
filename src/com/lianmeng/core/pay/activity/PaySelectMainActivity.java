@@ -22,19 +22,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
 import com.lianmeng.core.activity.R;
-import com.lianmeng.core.activity.R.id;
-import com.lianmeng.core.activity.R.layout;
-import com.lianmeng.core.activity.R.string;
 import com.lianmeng.core.framework.sysparser.SuccessParser;
 import com.lianmeng.core.framework.sysvo.RequestVo;
-import com.lianmeng.core.framework.util.NetUtil;
 import com.lianmeng.core.framework.util.SysU;
-import com.lianmeng.core.order.activity.OrdrSubmitOkActivity;
+import com.lianmeng.core.order.activity.RestaurantOrdrSubmitOkActivity;
+import com.lianmeng.extand.lianmeng.product.activity.RestaurantBaseActivity;
 import com.pingplusplus.android.PaymentActivity;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -56,7 +51,7 @@ import com.squareup.okhttp.Response;
  * 4）onActivityResult 中获得支付结构。
  * 5）如果支付成功。服务端会收到ping++ 异步通知，支付成功依据服务端异步通知为准。
  */
-public class PaySelectMainActivity extends Activity implements View.OnClickListener{
+public class PaySelectMainActivity extends RestaurantBaseActivity implements View.OnClickListener{
 
 	/**
 	 *开发者需要填一个服务端URL 该URL是用来请求支付需要的charge。务必确保，URL能返回json格式的charge对象。
@@ -104,7 +99,7 @@ public class PaySelectMainActivity extends Activity implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pay_select_main);
+        setContentView(R.layout.act_pay_select_main);
         
         amountEditText = (EditText) findViewById(R.id.amountEditText);
         wechatButton = (Button) findViewById(R.id.wechatButton);
@@ -234,6 +229,8 @@ public class PaySelectMainActivity extends Activity implements View.OnClickListe
 
     }
     
+     
+    
 	/**
 	 * onActivityResult 获得支付结果，如果支付成功，服务器会收到ping++ 服务器发送的异步通知。
 	 * 最终支付成功根据异步通知为准
@@ -260,18 +257,40 @@ public class PaySelectMainActivity extends Activity implements View.OnClickListe
                 showMsg(result, errorMsg, extraMsg);
                 if("success".equals(result)){
                 	
+                	/*RequestVo vo = new RequestVo();
+            		vo.context = this;
+            		vo.requestDataMap = new HashMap<String, String>();
+            		vo.requestDataMap.put("sku", "1200001:3|1200004:2");
+            		*/
+            		HashMap<String, String> requestDataMap = new HashMap<String, String>();
+					String inmapData="{\"ServiceName\":\"payOrderManagerService\" , \"Data\":{\"ACTION\":\"MIMMODIFYPAYSTATEORDER\",\"userId\":\""+SysU.USERID+"\",\"orderNo\":\""+orderNo+"\"}}";
+					requestDataMap.put("JsonData", inmapData);
+					RequestVo vo = new RequestVo(R.string.sysRequestServLet, this, requestDataMap,
+							new SuccessParser());
+            		getDataFromServer(vo, new DataCallback<Boolean>() {
+            			@Override
+            			public void processData(Boolean paramObject, boolean paramBoolean) {
+            				if(paramObject){
+            					Intent intent = new Intent(PaySelectMainActivity.this,RestaurantOrdrSubmitOkActivity.class);
+    		        			startActivity(intent);
+            				}
+            			}
+            		});
+                	/*
                 	HashMap<String, String> requestDataMap = new HashMap<String, String>();
-					String inmapData="{\"ServiceName\":\"payOrderManagerService\" , \"Data\":{\"ACTION\":\"MIMPAYORDERLIST\",\"userId\":\""+SysU.USERID+"\",\"orderNo\":\""+orderNo+"\"}}";
+					String inmapData="{\"ServiceName\":\"payOrderManagerService\" , \"Data\":{\"ACTION\":\"MIMMODIFYPAYSTATEORDER\",\"userId\":\""+SysU.USERID+"\",\"orderNo\":\""+orderNo+"\"}}";
 					requestDataMap.put("JsonData", inmapData);
 					RequestVo vo = new RequestVo(R.string.sysRequestServLet, this, requestDataMap,
 							new SuccessParser());
 					Boolean bool = (Boolean) NetUtil.post(vo);
 					if (bool != null) {
 						if (bool) {
-							Intent intent = new Intent(this,OrdrSubmitOkActivity.class);
+							Intent intent = new Intent(this,RestaurantOrdrSubmitOkActivity.class);
 		        			startActivity(intent);
 						}
 					}
+					Intent intent = new Intent(this,RestaurantOrdrSubmitOkActivity.class);
+        			startActivity(intent);*/
                 	
                 	
                 }
@@ -338,6 +357,30 @@ public class PaySelectMainActivity extends Activity implements View.OnClickListe
 			}
 
 		}
+	}
+
+	@Override
+	protected void findViewById() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void loadViewLayout() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void processLogic() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void setListener() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

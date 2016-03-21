@@ -9,8 +9,8 @@ import com.lianmeng.core.activity.R.string;
 import com.lianmeng.core.address.adapter.AddressManageAdapter;
 import com.lianmeng.core.address.adapter.AddressManageAdapter.OnItemButtonListener;
 import com.lianmeng.core.address.vo.AddressDetail;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysparser.SuccessParser;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.Constant;
@@ -18,7 +18,7 @@ import com.lianmeng.core.framework.util.Logger;
 import com.lianmeng.core.framework.util.NetUtil;
 import com.lianmeng.core.framework.util.SysU;
 import com.lianmeng.core.order.vo.Addup;
-import com.lianmeng.core.pay.activity.Payment_Center_Activity;
+import com.lianmeng.core.pay.activity.RestaurantPaymentCenterActivity;
 import com.lianmeng.core.scar.adapter.ShoppingCarAdapter;
 import com.lianmeng.core.scar.parser.ShoppingCarParser;
 import com.lianmeng.core.scar.vo.Cart;
@@ -37,7 +37,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-public class ShoppingCarActivity extends BaseWapperActivity  implements OnItemButtonListener, OnItemLongClickListener {
+public class ShoppingCarActivity extends BaseWapperNewActivity  implements OnItemButtonListener, OnItemLongClickListener ,View.OnClickListener{
 	protected static final String TAG = "ShoppingCarActivity";
 
 	private ListView shopcar_product_list;
@@ -51,7 +51,7 @@ public class ShoppingCarActivity extends BaseWapperActivity  implements OnItemBu
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.shopcar_bottom_toPay_text:
-			startActivity(new Intent(this, Payment_Center_Activity.class));
+			startActivity(new Intent(this, RestaurantPaymentCenterActivity.class));
 			finish();
 			break;
 		}
@@ -72,9 +72,9 @@ public class ShoppingCarActivity extends BaseWapperActivity  implements OnItemBu
 	}
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.shopping_car_activity);
+		setContentView(R.layout.old_act_shopping_car);
 		setTitle(getString(R.string.shoppingCartTitleTitleNameMsg));
-		selectedBottomTab(Constant.SHOPCAR);
+		//selectedBottomTab(Constant.SHOPCAR);
 	}
 
 	@Override
@@ -105,7 +105,7 @@ public class ShoppingCarActivity extends BaseWapperActivity  implements OnItemBu
 					shopcar_total_bonus_text_1.setText(addup.total_point + "");
 					shopcar_total_money_text_1.setText(addup.total_price + "");
 				} else {
-					setContentView(R.layout.shopping_none_car_activity);
+					setContentView(R.layout.old_act_shopping_none_car);
 				}
 				
 			}

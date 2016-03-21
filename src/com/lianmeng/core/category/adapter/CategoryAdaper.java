@@ -52,7 +52,7 @@ private static final String TAG = "CategoryAdaper";
 		final ViewHolder holder = new ViewHolder();
 		CategoryVo vo = categoryInfos.get(position);
 		if(convertView ==null){
-			convertView = View.inflate(context, R.layout.category_item, null);
+			convertView = View.inflate(context, R.layout.old_adapter_category_item, null);
 		}
 		convertView.setTag(vo.getId());
 		/**

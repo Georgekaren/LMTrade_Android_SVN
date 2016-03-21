@@ -4,93 +4,138 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import android.content.Intent;
-import android.os.Handler;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Gallery;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 import com.lianmeng.core.activity.R;
-import com.lianmeng.core.activity.R.drawable;
-import com.lianmeng.core.activity.R.id;
-import com.lianmeng.core.activity.R.layout;
-import com.lianmeng.core.activity.R.string;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.engine.CallbackImplements;
+import com.lianmeng.core.framework.engine.SyncImageLoaderNoAdapter;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
 import com.lianmeng.core.framework.sysvo.RequestVo;
-import com.lianmeng.core.framework.util.Constant;
-import com.lianmeng.core.framework.util.Logger;
-import com.lianmeng.core.home.adapter.HomeAdapter;
+import com.lianmeng.core.framework.util.SysU;
+import com.lianmeng.core.home.view.AbOnItemClickListener;
+import com.lianmeng.core.home.view.HomeTopSlidingImagePlayView;
+import com.lianmeng.core.home.view.PullToRefreshView;
+import com.lianmeng.core.home.view.PullToRefreshView.PullToRefreshListener;
+import com.lianmeng.core.home.adapter.HomeClassGridAdapter;
 import com.lianmeng.core.home.adapter.HomeBannerAdapter;
 import com.lianmeng.core.home.parser.HomeBannerParser;
 import com.lianmeng.core.home.vo.HomeBannerVo;
-import com.lianmeng.core.home.vo.HomeCategory;
-import com.lianmeng.core.product.activity.SearchProductListActivity;
-import com.lianmeng.extand.lianmeng.product.activity.BrandActivity;
-import com.lianmeng.extand.lianmeng.product.activity.BulletinActivity;
-import com.lianmeng.extand.lianmeng.product.activity.HotproductActivity;
-import com.lianmeng.extand.lianmeng.product.activity.LimitbuyActivity;
-import com.lianmeng.extand.lianmeng.product.activity.NewproductActivity;
-/**
- * 主页面
- * 
- * 搜索<br>
- * 点击搜索按钮激活 SearchActivity 数据存在 "key_words" 通过Intent.getStringExtra("key_words") 获取
- * @author liu
- *
- */
-@SuppressWarnings("deprecation")
-public class HomeActivity extends BaseWapperActivity implements OnItemClickListener, OnItemSelectedListener {
+import com.lianmeng.extand.lianmeng.product.activity.RestaurantDetailActivity;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
+
+public class HomeActivity extends  BaseWapperNewActivity implements View.OnClickListener {
 
 	private static final String TAG = "HomeActivity";
-	private ListView mCategoryListView;
-	
-	private Gallery mGallery;
-	private List<ImageView> mSlideViews;
-	private TextView searchEdit;
+	private SharedPreferences sp;
 	private boolean isPlay;
 	
-	private Runnable runnable = new Runnable() {
+	//分类的九宫格
+	private GridView gridView_classify;
+
+	private HomeClassGridAdapter adapter_GridView_classify;
+	// 首页轮播
+	private HomeTopSlidingImagePlayView viewPager;
+	// 扫一扫
+	private ImageView iv_shao;
+	// 分类九宫格的资源文件
+	private int[] pic_path_classify = { R.drawable.menu_guide_1,R.drawable.menu_guide_2, R.drawable.menu_guide_3,R.drawable.menu_guide_4};
+	private String[] pic_path_classify_sign = {"1001","1005", "1003","1004"};
+	private String[] pic_path_classify_sign_name = {"水果","日用品", "食品","饮料"};
+    
+	
+	/** 存储首页轮播的界面 */
+	private ArrayList<View> allListView;
+	
+	
+	PullToRefreshView pullToRefreshView;
+	ScrollView scroll;
+	
+	/** 首页轮播的界面的资源 */
+	private int[] resId = {R.drawable.menu_viewpager_1,R.drawable.menu_viewpager_2};
+	private SyncImageLoaderNoAdapter syncImageLoader = new SyncImageLoaderNoAdapter(); 
+	@InjectView(R.id.mid_title) TextView mid_title;
+	@InjectView(R.id.lilayout_home_product_apple_su) ImageView lilayout_home_product_apple_su;
+	@InjectView(R.id.lilayout_home_product_pear_su) ImageView lilayout_home_product_pear_su;
+	@InjectView(R.id.lilayout_home_product_kekou_su) ImageView lilayout_home_product_kekou_su;
+	@InjectView(R.id.lilayout_home_product_toothpaste_su) ImageView lilayout_home_product_toothpaste_su;
+	@InjectView(R.id.lilayout_hone_display_big_image_control) LinearLayout lilayout_hone_display_big_image_control;
+
+	
+	
+	@Override
+	public void onClick(View v) {
+	     
+	      switch(v.getId()){
+	          case R.id.lilayout_home_product_apple_su:
+	              intoProduct("2002","新疆冰芯苹果");
+	          break;
+	          case R.id.lilayout_home_product_pear_su:
+                  intoProduct("2001","梨");
+              break;
+	          case R.id.lilayout_home_product_kekou_su:
+                  intoProduct("2101","可乐");
+              break;
+	          case R.id.lilayout_home_product_toothpaste_su:
+                  intoProduct("2201","牙膏");
+              break;
+	      }
+	      
+	     
+	 }  
+	
+	private void getUserDataFromShape(){
+	    sp = getSharedPreferences("userinfo", MODE_PRIVATE);
+	   String userId=sp.getString("userId", "-1");
+	   if(userId!=null&&!userId.equals("-1")&&!userId.equals("")){
+	       SysU.USERID=userId;
+	   }
+	}
+	
+	/*private Runnable runnable = new Runnable() {
 		
 		@Override
 		public void run() {
 			if  (!isPlay)
 				return ;
-			mGallery.setSelection(mGallery.getSelectedItemPosition() + 1);
- 			handler.postDelayed(this, 4000);
- 			Logger.d(TAG, getString(R.string.homeMsgNextPictureMsg));
+			//mGallery.setSelection(mGallery.getSelectedItemPosition() + 1);
+ 			//handler.postDelayed(this, 4000);
+ 			//Logger.d(TAG, getString(R.string.homeMsgNextPictureMsg));
 		}
-	};
-	
-	private Handler handler = new Handler();
-
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.home_searchok: //搜索确定按钮
-			String words = searchEdit.getText().toString();
-			if (TextUtils.isEmpty(words)) {
-				Toast.makeText(this, getString(R.string.homeMsgNoInputMsg), Toast.LENGTH_LONG).show();
-				return ;
-			}
-			Intent Intent = new Intent(this, SearchProductListActivity.class);
-			Intent.putExtra("keyWord", words);
-			startActivity(Intent);
-			break;
-		}
+	};*/
+	public void intoProduct(String type,String titleName){
+	    Intent Intent = new Intent(HomeActivity.this, RestaurantDetailActivity.class);
+        String inName="日常用品";
+        if(titleName!=null&&!"".equals(titleName)){
+            inName=titleName;
+        }
+        Intent.putExtra("type", type);
+        Intent.putExtra("name", inName);
+        startActivity(Intent);
 	}
 	@Override
 	protected void onResume() {
 		super.onResume();
 		isPlay = true;
-		runnable.run();
+	//	runnable.run();
 	}
 	@Override
 	protected void onPause() {
@@ -99,36 +144,7 @@ public class HomeActivity extends BaseWapperActivity implements OnItemClickListe
 	}
 	
 	@Override
-	protected void findViewById() {
-		mCategoryListView = (ListView) findViewById(R.id.custonInfoListView);
-		mGallery = (Gallery) findViewById(R.id.gallery);
-		mSlideViews = new ArrayList<ImageView>();
-		mSlideViews.add((ImageView) findViewById(R.id.imgPoint0));
-		mSlideViews.add((ImageView) findViewById(R.id.imgPoint1));
-		mSlideViews.add((ImageView) findViewById(R.id.imgPoint2));
-		mSlideViews.add((ImageView) findViewById(R.id.imgPoint3));
-		mSlideViews.add((ImageView) findViewById(R.id.imgPoint4));
-		searchEdit = (TextView) findViewById(R.id.editSearchInfo);
-		findViewById(R.id.home_searchok).setOnClickListener(this);
-	}
-
-	@Override
-	protected void loadViewLayout() {
-		setContentView(R.layout.home_activity);
-		setHeadLeftVisibility(View.INVISIBLE);
-		setHeadBackgroundResource(R.drawable.head_bg_home);
-		selectedBottomTab(Constant.HOME);
-	}
-
-	@Override
 	protected void processLogic() {
-		List<HomeCategory> categroy = new ArrayList<HomeCategory>();
-		categroy.add(new HomeCategory(R.drawable.home_classify_01, getString(R.string.homeMsgClass01Msg)));
-		categroy.add(new HomeCategory(R.drawable.home_classify_02, getString(R.string.homeMsgClass02Msg)));
-		categroy.add(new HomeCategory(R.drawable.home_classify_03, getString(R.string.homeMsgClass03Msg)));
-		categroy.add(new HomeCategory(R.drawable.home_classify_04, getString(R.string.homeMsgClass04Msg)));
-		categroy.add(new HomeCategory(R.drawable.home_classify_05, getString(R.string.homeMsgClass05Msg)));
-		mCategoryListView.setAdapter(new HomeAdapter(this, categroy));
 		HashMap<String,String> inMap=new HashMap<String,String>();
 		inMap.put("JsonData", "{\"ServiceName\":\"homeManagerService\" , \"Data\":{}}");
 		RequestVo reqVo = new RequestVo(R.string.sysRequestServLet, this, inMap, new HomeBannerParser());
@@ -136,57 +152,141 @@ public class HomeActivity extends BaseWapperActivity implements OnItemClickListe
 			@Override
 			public void processData(List<HomeBannerVo> paramObject, boolean paramBoolean) {
 				HomeBannerAdapter adapter = new HomeBannerAdapter(HomeActivity.this, paramObject);
-				mGallery.setAdapter(adapter);
+				//mGallery.setAdapter(adapter);
 
 			}
 		});
+		getUserDataFromShape();
 	}
 
+	  
+	@Override
+	protected void findViewById() {
+		
+		gridView_classify = (GridView) findViewById(R.id.my_gridview);
+		gridView_classify.setSelector(new ColorDrawable(Color.TRANSPARENT));
+		adapter_GridView_classify = new HomeClassGridAdapter(this, pic_path_classify);
+		gridView_classify.setAdapter(adapter_GridView_classify);
+		
+		viewPager = (HomeTopSlidingImagePlayView) findViewById(R.id.viewPager_menu);
+		//设置播放方式为顺序播放
+		viewPager.setPlayType(1);
+		//设置播放间隔时间
+		viewPager.setSleepTime(3000);
+
+		gridView_classify.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+				String inName="日常用品";
+				
+				intoProduct(pic_path_classify_sign[position],pic_path_classify_sign_name[position]);
+			}
+		});
+		initViewPager() ;
+		
+		scroll = (ScrollView) findViewById(R.id.home_pull_scroll);
+		pullToRefreshView = (PullToRefreshView) findViewById(R.id.home_pull);
+		pullToRefreshView.setOnRefreshListener(new PullToRefreshListener() {
+			@Override
+			public void onRefresh() {
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				pullToRefreshView.finishRefreshing();
+			}
+		}, 0);
+		
+		
+		LinearLayout home_linearLayout=(LinearLayout) findViewById(R.id.view_home_ext_layout);
+		home_linearLayout.setOnTouchListener(new OnTouchListener() {  
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				pullToRefreshView.onTouchEvent(event);
+				return true;
+			}
+            });
+		
+		
+		ButterKnife.inject(this);
+		mid_title.setText(R.string.homeMsgDefaultSchoolTitleMsg);
+		
+		
+		loadRemoteImage(getString(R.string.sysRequestHost)+"images/home_product_apple_su.jpg",lilayout_home_product_apple_su);
+		loadRemoteImage(getString(R.string.sysRequestHost)+"images/home_product_pear_su.jpg",lilayout_home_product_pear_su);
+		loadRemoteImage(getString(R.string.sysRequestHost)+"images/home_product_kekou_su.jpg",lilayout_home_product_kekou_su);
+		loadRemoteImage(getString(R.string.sysRequestHost)+"images/home_product_toothpaste_su.jpg",lilayout_home_product_toothpaste_su);
+        
+		
+	}
+	
+	
+	
+	
+	
+	@Override
+	protected void loadViewLayout() {
+		setContentView(R.layout.act_home);
+	}
 	@Override
 	protected void setListener() {
-		mGallery.setOnItemSelectedListener(this);
-		mCategoryListView.setOnItemClickListener(this);
+		// TODO Auto-generated method stub
+		
 	}
+	
+	
+	 
+	
+	 
+	
+	private void initViewPager() {
 
-	/**
-	 * 首页栏点击
-	 */
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		switch (position) {
-		case 0://水果
-			startActivity(new Intent(this,LimitbuyActivity.class));
-			break;
-		case 1://日用品
-			startActivity(new Intent(this, BulletinActivity.class));
-			break;
-		case 2://饮料
-			startActivity(new Intent(this,NewproductActivity.class));
-			break;
-		case 3://食品
-			startActivity(new Intent(this,HotproductActivity.class));
-			break;
-		case 4://文具
-			startActivity(new Intent(this,BrandActivity.class));
-			break;
+		if (allListView != null) {
+			allListView.clear();
+			allListView = null;
 		}
-	}
+		allListView = new ArrayList<View>();
 
-	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
- 		int size = mSlideViews.size();
-		for (int i = 0; i < size; i++) {
-			int j = position % size;
-			ImageView imageView = mSlideViews.get(i);
-			if (j == i)
-				imageView.setBackgroundResource(R.drawable.slide_adv_selected);
-			else
-				imageView.setBackgroundResource(R.drawable.slide_adv_normal);
+		for (int i = 0; i < resId.length; i++) {
+			//导入ViewPager的布局
+			View view = LayoutInflater.from(this).inflate(R.layout.act_home_layout, null);
+			ImageView imageView = (ImageView) view.findViewById(R.id.pic_item);
+			imageView.setImageResource(resId[i]);
+			allListView.add(view);
 		}
+		
+		
+		viewPager.addViews(allListView);
+		//开始轮播
+		viewPager.startPlay();
+		viewPager.setOnItemClickListener(new AbOnItemClickListener() {
+			@Override
+			public void onClick(int position) {
+				//跳转到详情界面
+				Intent Intent = new Intent(HomeActivity.this, RestaurantDetailActivity.class);
+				Intent.putExtra("keyWord", "");
+				startActivity(Intent);
+				 
+			}
+		});
 	}
+	 
+	
+	// url:图片的url地址  
+    // id:ImageView控件
+    private void loadRemoteImage(String url,ImageView imageView) { 
+        imageView.setOnClickListener(this);
+        CallbackImplements callbackImplements = new CallbackImplements(imageView);  
+        Drawable cacheImage = syncImageLoader.loadDrawable(url,   callbackImplements);  
+        // 如果图片缓存存在,则在外部设置image.否则是调用的callback函数设置  
+        if (cacheImage != null) {  
+            imageView.setImageDrawable(cacheImage);  
+        }  
+    }
 
-	@Override
-	public void onNothingSelected(AdapterView<?> parent) {
 
-	}
+
+   
 }

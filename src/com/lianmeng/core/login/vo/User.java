@@ -27,10 +27,50 @@ public class User {
 	/** 收藏总数 */
 	private int favoritescount;
 	
-	public User() {
+	
+	/**
+	 * userName 用户名<br>
+	 */
+	private String userName;
+	
+	/**
+     * telePhone 电话<br>
+     */
+    private String telephone;
+	
+    /**
+     * pic 图像url<br>
+     */
+    private String pic;
+    
+	public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telePhone) {
+        this.telephone = telePhone;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public User() {
 	}
 
-	public User(int userId, int bonus, String level, String usersession, int ordercount, int favoritescount) {
+	public User(int userId, int bonus, String level, String usersession, int ordercount, int favoritescount,String userName,String telephone) {
 		super();
 		this.userId = userId;
 		this.bonus = bonus;
@@ -38,6 +78,8 @@ public class User {
 		this.usersession = usersession;
 		this.ordercount = ordercount;
 		this.favoritescount = favoritescount;
+		this.userName=userName;
+		this.telephone=telephone;
 	}
 
 	public int getUserId() {

@@ -23,16 +23,27 @@ public class OrderList {
 	/** 订单标识，1=>可删除可修改 2=>不可修改 3=>已完成 */
 	private int flag;
 
-	public OrderList() {
+	private String pic;
+	
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public OrderList() {
 	}
 
-	public OrderList(String orderid, String status, double price, String time, int flag) {
+	public OrderList(String orderid, String status, double price, String time, int flag, String pic) {
 		super();
 		this.orderid = orderid;
 		this.status = status;
 		this.price = price;
 		this.time = time;
 		this.flag = flag;
+		this.pic = pic;
 	}
 
 	public String getOrderid() {

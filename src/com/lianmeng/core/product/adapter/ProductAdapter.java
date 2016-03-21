@@ -29,17 +29,17 @@ public class ProductAdapter extends ImageAsyncLoaderAdpter<ProductListVo> {
 		View view;
 		ProductViewHolder holder;
 		if (convertView == null) {
-			view = inflate(R.layout.product_list_items, null);
+			view = inflate(R.layout.old_adapter_product_list_items, null);
 			holder = new ProductViewHolder();
 			holder.goodsIv = (ImageView) view.findViewById(R.id.goodsIconIv);
 			holder.tvName = (TextView) view.findViewById(R.id.textClothesName);
 			holder.tvPrice = (TextView) view.findViewById(R.id.textClothesPrice);
 			holder.tvMkPrice = (TextView) view.findViewById(R.id.textMarketPrice);
 			holder.commNum = (TextView) view.findViewById(R.id.textProductCommentNum);
-			view.setTag(R.layout.product_list_items, holder);
+			view.setTag(R.layout.old_adapter_product_list_items, holder);
 		} else {
 			view = convertView;
-			holder = (ProductViewHolder) view.getTag(R.layout.product_list_items);
+			holder = (ProductViewHolder) view.getTag(R.layout.old_adapter_product_list_items);
 		}
 		
 		ProductListVo item = getItem(position);

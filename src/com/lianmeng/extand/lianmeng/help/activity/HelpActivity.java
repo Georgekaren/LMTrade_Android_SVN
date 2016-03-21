@@ -14,20 +14,17 @@ import com.lianmeng.core.activity.R;
 import com.lianmeng.core.activity.R.id;
 import com.lianmeng.core.activity.R.layout;
 import com.lianmeng.core.activity.R.string;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.Constant;
 import com.lianmeng.extand.lianmeng.help.adapter.HelpListViewAdapter;
 import com.lianmeng.extand.lianmeng.help.parser.HelpParser;
 import com.lianmeng.extand.lianmeng.help.vo.HelpVo;
 
-public class HelpActivity extends BaseWapperActivity {
+public class HelpActivity extends BaseWapperNewActivity {
  	private ListView lv_help_info;
 	Map<String,Object> helpMap;
-	@Override
-	public void onClick(View v) {
-		 
-	}
+	
 
 	@Override
 	protected void findViewById() {
@@ -36,9 +33,9 @@ public class HelpActivity extends BaseWapperActivity {
 
 	@Override
 	protected void loadViewLayout() {
-		this.setContentView(R.layout.help_activity);
+		this.setContentView(R.layout.old_act_help);
 		setTitle(getString(R.string.helpMsgHelpCenterMsg));
-		selectedBottomTab(Constant.MORE);
+		
 	}
 
 	@Override

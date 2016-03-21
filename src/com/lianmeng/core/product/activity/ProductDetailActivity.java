@@ -24,8 +24,8 @@ import com.lianmeng.core.activity.R;
 import com.lianmeng.core.activity.R.id;
 import com.lianmeng.core.activity.R.layout;
 import com.lianmeng.core.activity.R.string;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity.DataCallback;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity.DataCallback;
 import com.lianmeng.core.framework.sysparser.SuccessParser;
 import com.lianmeng.core.framework.sysvo.RequestVo;
 import com.lianmeng.core.framework.util.Logger;
@@ -36,7 +36,7 @@ import com.lianmeng.core.product.vo.ProdcutHistory;
 import com.lianmeng.core.product.vo.ProductDetail;
 import com.lianmeng.core.scar.activity.ShoppingCarActivity;
 
-public class ProductDetailActivity extends BaseWapperActivity {
+public class ProductDetailActivity extends BaseWapperNewActivity {
 
 	private static final String TAG = "ProductDetailActivity";
 	private ProductDetail productDetail;
@@ -56,7 +56,7 @@ public class ProductDetailActivity extends BaseWapperActivity {
 	private TextView orderTelTv;
 	private ProductDetail currentProduct;
 
-	@Override
+	/*@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.textProdToCollect:
@@ -81,7 +81,7 @@ public class ProductDetailActivity extends BaseWapperActivity {
 			break;
 			
 		}
-	}
+	}*/
 
 	@Override
 	protected void findViewById() {
@@ -94,12 +94,12 @@ public class ProductDetailActivity extends BaseWapperActivity {
 		prodNumValue = (EditText) findViewById(R.id.prodNumValue);
 		textPutIntoShopcar = (TextView) findViewById(R.id.textPutIntoShopcar);
 		orderTelTv = (TextView) findViewById(R.id.orderTelTv);
-		findViewById(R.id.textProdToCollect).setOnClickListener(this);
+		//findViewById(R.id.textProdToCollect).setOnClickListener(this);
 	}
 
 	@Override
 	protected void loadViewLayout() {
-		setContentView(R.layout.product_detail_activity);
+		setContentView(R.layout.old_act_product_detail);
 		setTitle(getString(R.string.prodDetailTitleOrderDetailNameMsg));
 	}
 

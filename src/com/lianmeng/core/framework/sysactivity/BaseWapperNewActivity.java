@@ -6,19 +6,13 @@ import java.util.Vector;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lianmeng.core.activity.R;
@@ -31,9 +25,7 @@ import com.lianmeng.core.framework.util.Logger;
 import com.lianmeng.core.framework.util.NetUtil;
 import com.lianmeng.core.framework.util.NetUtil.Status;
 import com.lianmeng.core.framework.util.ThreadPoolManager;
-import com.lianmeng.core.home.activity.HomeActivity;
 import com.lianmeng.core.login.activity.LoginActivity;
-import com.lianmeng.core.home.activity.BaseActivity;
 
 public abstract class BaseWapperNewActivity extends BaseActivity{
 	private static final String TAG = "BaseWapperActivity";
@@ -264,15 +256,12 @@ public abstract class BaseWapperNewActivity extends BaseActivity{
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
-			case R.id.imgHome:
-				startActivity(new Intent(BaseWapperNewActivity.this, HomeActivity.class));
-				break;
-			case R.id.head_left:
+			/*case R.id.head_left:
 				onHeadLeftButton(v);
 				break;
 			case R.id.head_right:
 				onHeadRightButton(v);
-				break;
+				break;*/
 			}
 		}
 	}

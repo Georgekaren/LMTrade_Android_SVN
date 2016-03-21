@@ -1,18 +1,15 @@
 package com.lianmeng.extand.lianmeng.help.activity;
 import com.lianmeng.core.activity.R;
 import com.lianmeng.core.activity.R.layout;
-import com.lianmeng.core.framework.sysactivity.BaseWapperActivity;
+import com.lianmeng.core.framework.sysactivity.BaseWapperNewActivity;
 import com.lianmeng.core.framework.util.Constant;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class HelpDetailActivity extends BaseWapperActivity {
- 	@Override
-	public void onClick(View v) {
-	 
-	}
+public class HelpDetailActivity extends BaseWapperNewActivity {
+ 	
 
 	@Override
 	protected void findViewById() {
@@ -22,9 +19,9 @@ public class HelpDetailActivity extends BaseWapperActivity {
 	@Override
 	protected void loadViewLayout() {
 		// TODO Auto-generated method stub
-		setContentView(R.layout.help_detail_activity);
+		setContentView(R.layout.old_act_help_detail);
 		setTitle(getString(R.string.helpMsgHelpCenterMsg));
-		selectedBottomTab(Constant.MORE);
+		
 		Bundle bundle = getIntent().getExtras();
 		String detail_url = bundle.getString("detail_url");
 		System.out.println(detail_url);

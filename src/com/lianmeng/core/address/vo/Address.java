@@ -10,16 +10,27 @@ public class Address {
 	private String name;
 	private String address_area;
 	private String address_detail;
-	
-	public Address() {
+	/** 手机号码 */
+    private String phonenumber;
+    
+	public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public Address() {
 	}
 	
-	public Address(int id, String name, String address_area, String address_detail) {
+	public Address(int id, String name, String address_area, String address_detail,String phonenumber) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address_area = address_area;
 		this.address_detail = address_detail;
+		this.phonenumber=phonenumber;
 	}
 
 	public int getId() {

@@ -14,11 +14,15 @@ public class LoginParser extends BaseParser<UserInfo> {
 		UserInfo localUserInfo = new UserInfo();
 		if (super.checkResponse(paramString) != null) {
 			
-			JSONObject jsonObject = new JSONObject(paramString).getJSONObject("USER_INFO");
+			JSONObject rootjsonObject = new JSONObject(paramString);
+			
+			if(!rootjsonObject.isNull("USER_INFO")){
+			JSONObject jsonObject =rootjsonObject.getJSONObject("USER_INFO");
 			String userid = jsonObject.getString("id");
 			String usersession = jsonObject.getString("name");
 			localUserInfo.userId = userid;
 			localUserInfo.usersession = usersession;
+			}
 			//return localUserInfo;
 		}
 		return localUserInfo;
