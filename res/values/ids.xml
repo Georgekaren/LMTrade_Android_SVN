@@ -4,7 +4,6 @@
     <item type="id" name="backTv">false</item>
     <item type="id" name="imgLogo">false</item>
     <item type="id" name="textVersion">false</item>
-    <item type="id" name="bottomBar">false</item>
     <item type="id" name="textSubmitUp">false</item>
     <item type="id" name="scrAccounts">false</item>
     <item type="id" name="textAllPrice">false</item>
@@ -599,4 +598,84 @@
     <item type="id" name="tv_foot_title">false</item>
     <item type="id" name="pb_foot_refreshing">false</item>
     <item type="id" name="tv_head_title">false</item>
+    <item type="id" name="image">false</item>
+    <item type="id" name="iv_isbook_1">false</item>
+    <item type="id" name="line">false</item>
+    <item type="id" name="projuctTitle">false</item>
+    <item type="id" name="projuctPrice">false</item>
+    <item type="id" name="projuctFavourable">false</item>
+    <item type="id" name="sale_num_txt">false</item>
+    <item type="id" name="tv_crazy_">false</item>
+    <item type="id" name="saleReLay">false</item>
+    <item type="id" name="reduce">false</item>
+    <item type="id" name="numText">false</item>
+    <item type="id" name="add">false</item>
+    
+    
+    <item type="id" name="shopping_cart_state_bar_content_view">false</item>
+    <item type="id" name="food_list_order_cart">false</item>
+    <item type="id" name="food_list_order_state">false</item>
+    <item type="id" name="food_list_shipping_fee">false</item>
+    <item type="id" name="food_list_shipping_num">false</item>
+    <item type="id" name="food_list_shipping_price">false</item>
+    <item type="id" name="goto_cart">false</item>
+    <item type="id" name="food_list_take_order_button">false</item>
+    <item type="id" name="splash_firm">false</item>
+    
+    <item type="id" name="cart_empty_view">false</item>
+    <item type="id" name="cart_list_footer_weixin_order_entrance">false</item>
+    
+    <item type="id" name="weixin_login">false</item>
+    <item type="id" name="cart_list_footer_weixin_order_message">false</item>
+    
+    <item type="id" name="food_search_no_result">false</item>
+    <item type="id" name="food_list_item_name_container">false</item>
+    <item type="id" name="food_list_item_description">false</item>
+    <item type="id" name="food_list_item_rate_container">false</item>
+    <item type="id" name="food_list_item_rate">false</item>
+    <item type="id" name="food_list_icon_container">false</item>
+    <item type="id" name="promotion_icon">false</item>
+    <item type="id" name="food_list_item_add_button_container">false</item>
+    <item type="id" name="food_list_item_minus">false</item>
+    <item type="id" name="food_list_item_add_view_container">false</item>
+    <item type="id" name="food_list_item_size">false</item>
+    <item type="id" name="food_list_item_add_view">false</item>
+    <item type="id" name="food_list_item_price_text_view">false</item>
+    <item type="id" name="origin_price">false</item>
+    <item type="id" name="promotion_description">false</item>
+    <item type="id" name="limitProductId">false</item>
+    
+    
+    <item type="id" name="ll_user_header">false</item>
+    <item type="id" name="iv_user_header">false</item>
+    <item type="id" name="ll_has_logon">false</item>
+    <item type="id" name="tv_user_name">false</item>
+    <item type="id" name="tv_user_phone">false</item>
+    <item type="id" name="ll_user_account">false</item>
+    <item type="id" name="fm_ll_myBalance">false</item>
+    <item type="id" name="view_mid_line">false</item>
+    <item type="id" name="tv_balance">false</item>
+    <item type="id" name="fm_ll_myScore">false</item>
+    <item type="id" name="tv_tianj_title">false</item>
+    <item type="id" name="tv_tianj">false</item>
+    <item type="id" name="fm_ll_myLoan">false</item>
+    <item type="id" name="tv_loan_title">false</item>
+    <item type="id" name="tv_loan">false</item>
+    <item type="id" name="fm_ll_applyfor">false</item>
+    <item type="id" name="iv_applyfor">false</item>
+    <item type="id" name="txt_applyfor">false</item>
+    <item type="id" name="fm_ll_share">false</item>
+    <item type="id" name="iv_my_share">false</item>
+    <item type="id" name="fm_ll_recommend">false</item>
+    <item type="id" name="iv_my_recommend">false</item>
+    
+    
+    <item name="scrapped_view" type="id"/>
+    <item name="dialog_waiting" type="id"></item>
+    <item name="ui_show_text" type="id"></item>
+    <item name="ui_show_dialog" type="id"></item>
+    <item name="ui_dismiss_dialog" type="id"></item>
+    <item name="ui_update_ui" type="id"></item>
+    <item name="dialog_wireless_setting" type="id"></item>
+    
 </resources>

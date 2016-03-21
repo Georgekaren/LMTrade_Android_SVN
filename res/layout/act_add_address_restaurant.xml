@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     style="@style/mSrollView"
+      >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="5.0dip" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/orderDetailLableReceiver"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/add_address_name_edit"
+                android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/addressLabelTeleName"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/add_address_mobile_edit"
+                android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip"
+                android:phoneNumber="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/addressLabelFixTeleName"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/add_address_tel_edit"
+                android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip"
+                android:phoneNumber="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_address_province_ly"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/addressLabelProvinceName"
+                android:textColor="@color/black" />
+
+            <Spinner
+                android:id="@+id/address_add_spinner_province"
+                android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip" 
+                android:prompt="@string/address_select_province"
+                
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_address_city_ly"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:clickable="true"
+            android:orientation="horizontal"  android:visibility="gone" >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/addressLabelCityName"
+                android:textColor="@color/black"
+                 />
+
+            <Spinner
+                android:id="@+id/address_add_spinner_city"
+                android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip"
+                 android:prompt="@string/address_select_city"
+                   
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_address_area_ly"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:clickable="true"
+            android:orientation="horizontal" 
+            android:visibility="gone"
+             >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/addressLabelAreaName"
+                android:textColor="@color/black" />
+
+            <Spinner
+                android:id="@+id/address_add_spinner_area"
+                 android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip" 
+                android:prompt="@string/address_select_area"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/addressLabelDetailName"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/add_address_detail_edit"
+                android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/addressLabelZipName"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/add_address_zipcode_edit"
+                android:layout_width="230.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5.0dip"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/save_address_button"
+                android:layout_width="120.0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dip"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/addressButtonSaveName"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/cancel_address_button"
+                android:layout_width="120.0dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dip"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/addressButtonCancelName"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
+-->
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/act_address_title" />
+    <ScrollView android:background="@color/bg_acty_EFEFEF" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@+id/edtv_dormitory_provice" android:background="@drawable/bg_login_input_layout" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="35.0dip">
+                <Spinner android:textSize="17.0dip" android:textColor="#ff333333" android:textColorHint="#ffc3c3c3" android:id="@+id/edtv_dormitory_area_provice" android:background="@drawable/bg_login_input_edittext" android:paddingLeft="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/txt_dormitoryArea" android:singleLine="true" android:editable="false" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/ll_dormitory_city" android:background="@drawable/bg_login_input_layout" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="35.0dip">
+                <Spinner android:textSize="17.0dip" android:textColor="#ff333333" android:textColorHint="#ffc3c3c3" android:id="@+id/edtv_dormitory_area_city" android:background="@drawable/bg_login_input_edittext" android:paddingLeft="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/txt_dormitoryArea" android:singleLine="true" android:editable="false" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/ll_which_ridgepole" android:background="@drawable/bg_login_input_layout" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="35.0dip">
+                <Spinner android:textSize="17.0dip" android:textColor="#ff333333" android:textColorHint="#ffc3c3c3" android:id="@+id/edtv_which_area_ridgepole" android:background="@drawable/bg_login_input_edittext" android:paddingLeft="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/txt_ridgepole" android:singleLine="true" android:editable="false" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/ll_real_where" android:background="@drawable/bg_login_input_layout" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="35.0dip">
+                <EditText android:textSize="17.0dip" android:textColor="#ff333333" android:textColorHint="#ffc3c3c3" android:id="@+id/edtv_real_where" android:background="@drawable/bg_login_input_edittext" android:paddingLeft="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/hint_where" android:maxLines="50" android:singleLine="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/ll_receiver_name" android:background="@drawable/bg_login_input_layout" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="35.0dip">
+                <EditText android:textSize="17.0dip" android:textColor="#ff333333" android:textColorHint="#ffc3c3c3" android:id="@+id/edtv_receiver_name" android:background="@drawable/bg_login_input_edittext" android:paddingLeft="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/hint_name" android:maxLines="30" android:singleLine="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/ll_receiver_mobile" android:background="@drawable/bg_login_input_layout" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="35.0dip">
+                <EditText android:textSize="17.0dip" android:textColor="#ff333333" android:textColorHint="#ffc3c3c3" android:id="@+id/edtv_receiver_mobile" android:background="@drawable/bg_login_input_edittext" android:paddingLeft="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/hint_mobile" android:singleLine="true" android:maxLength="11" android:layout_centerVertical="true" android:inputType="number" />
+            </RelativeLayout>
+            <!-- 
+            <RelativeLayout android:id="@+id/ll_smscode_get" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="35.0dip">
+                <EditText android:textSize="15.0dip" android:textColorHint="#ffc3c3c3" android:id="@+id/edtv_sms_code" android:background="@drawable/bg_login_input_layout" android:paddingLeft="14.0dip" android:layout_width="120.0dip" android:layout_height="fill_parent" android:hint="@string/verification_code" android:singleLine="true" android:maxLength="4" android:layout_centerVertical="true" android:inputType="number" />
+                <LinearLayout android:id="@+id/ll_drag_switchview" android:background="@drawable/bg_drag_switchview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/edtv_sms_code" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                    <com.ndol.sale.starter.patch.ui.widget.DragSwitchView android:id="@+id/btn_drag_switchview" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+                </LinearLayout>
+                <Button android:textSize="16.0dip" android:textColor="#ffff8300" android:id="@+id/btn_get_smscode" android:background="@null" android:visibility="gone" android:layout_width="120.0dip" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:text="@string/click_get_verification_code" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+             -->
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="35.0dip">
+                <TextView android:textSize="15.0dip" android:textColor="#ff333333" android:textColorHint="#ffc3c3c3" android:id="@+id/tv_setdefault_addr" android:paddingLeft="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_default" android:singleLine="true" android:layout_centerVertical="true" />
+                <ToggleButton android:layout_gravity="center_horizontal" android:id="@+id/togbtn_setdefault_addr" android:background="@android:color/transparent" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:checked="false" android:button="@drawable/btn_isset_default_addr" android:textOn="" android:textOff="" android:text="" android:layout_toRightOf="@id/tv_setdefault_addr" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <Button android:textSize="20.0dip" android:textStyle="bold" android:textColor="@color/white" android:id="@+id/btn_save_addr" android:background="@drawable/button_theme_selector" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginLeft="37.0dip" android:layout_marginTop="25.0dip" android:layout_marginRight="37.0dip" android:text="@string/cart_txt_save" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

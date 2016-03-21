@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_login_input_layout" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+	  
+     <RelativeLayout android:id="@+id/ll_order_info" android:layout_width="fill_parent" android:layout_height="165.0dip">
+        <TextView android:textSize="13.0dip" android:textColor="@color/backColor" android:id="@+id/orderState_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="26.0dip" android:layout_marginTop="10.0dip" android:text="配送中" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <TextView android:textSize="10.0dip" android:textColor="#ff333333" android:id="@+id/orderId_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="25.0dip" android:text="订单编号K1356182163712" android:layout_alignBottom="@id/orderState_text" android:layout_alignParentRight="true" />
+        <View android:id="@+id/imo_view_topline" android:layout_marginLeft="10.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/orderId_text" style="@style/line_horizontal" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/imo_ll_mid" android:layout_width="fill_parent" android:layout_height="90.0dip" android:layout_below="@id/imo_view_topline">
+            <ImageView android:id="@+id/imo_iv_icon" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="25.0dip" android:src="@drawable/goods_loading" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="11.0dip" android:textColor="#ffaeaeae" android:gravity="center" android:layout_gravity="top" android:id="@+id/imo_tv_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="10.0dip" android:text="您的货品将在" />
+                <LinearLayout android:orientation="horizontal" android:id="@+id/ll_pre_arrived" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="7.0dip">
+                    <TextView android:textSize="11.0dip" android:textColor="@color/backColor" android:id="@+id/imo_tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="57:53" />
+                    <TextView android:textSize="11.0dip" android:textColor="#ffaeaeae" android:id="@+id/imo_tv_back_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="到达战场" />
+                </LinearLayout>
+                <TextView android:textSize="10.0dip" android:textColor="@color/blue_light_maybe" android:id="@+id/orderTime_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="10.0dip" android:text="下单时间：2015-4-15 11:11:11" />
+                
+            </LinearLayout>
+            <View android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="28.0dip" style="@style/img_arrows" />
+        </LinearLayout>
+        <View android:id="@+id/imo_view_bottomline" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/imo_ll_mid" style="@style/line_horizontal" />
+        <RelativeLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_below="@id/imo_view_bottomline">
+            <TextView android:textSize="13.0dip" android:textStyle="bold" android:textColor="#ff333333" android:id="@+id/textPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="26.0dip" android:text="￥23.23" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="11.0dip" android:textStyle="bold" android:textColor="@color/txt_f45955" android:id="@+id/orderPrice_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="返现 ￥6.5" android:layout_toRightOf="@id/textPrice" android:layout_centerVertical="true" />
+            <Button android:textSize="13.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@+id/btn_pay" android:background="@drawable/button_theme_selector" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="25.0dip" android:layout_marginRight="27.0dip" android:text="@string/cart_txt_no_pay" android:layout_toLeftOf="@+id/textCancelOrder" android:layout_centerVertical="true" />
+            <Button android:textSize="13.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/textCancelOrder" android:background="@drawable/button_theme_selector" android:layout_width="60.0dip" android:layout_height="25.0dip" android:layout_marginRight="27.0dip" android:text="@string/cart_txt_cancel" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

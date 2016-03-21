@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  
+     android:orientation="vertical" android:id="@+id/aof_rl_root" android:background="@color/color_e0e0e0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" >
+    <include android:id="@+id/aof_hv_head" layout="@layout/act_address_title" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/aof_hv_head">
+    
+     <RelativeLayout android:id="@+id/aof_ll_pay" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+            <TextView android:textSize="16.0sp" android:textColor="@color/gray_dark" android:id="@+id/shifujine_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="支付" android:layout_centerVertical="true" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/backColor" android:id="@+id/aof_tv_needToPay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="￥0.00" android:layout_toRightOf="@id/shifujine_label" android:layout_centerVertical="true" />
+            <TextView android:textSize="13.0sp" android:textColor="@color/txt_f45955" android:id="@+id/cash_back_txt" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="首单返现 ￥15.8" android:layout_toRightOf="@id/aof_tv_needToPay" android:layout_centerVertical="true" />
+            <Button android:textSize="16.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@+id/ordr_submit_bottom_text" android:background="@drawable/button_theme_gobuy_selector" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:text="@string/confirm_order_up" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <View android:id="@+id/aof_ll_pay_line" android:background="@color/color_eeeeee" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_above="@id/aof_ll_pay" />
+        <ScrollView android:id="@+id/aof_sc_scroll" 
+            android:scrollbars="none" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content" 
+            android:layout_marginBottom="2.0dip" 
+            android:fillViewport="true" 
+            android:layout_above="@id/aof_ll_pay_line" 
+            android:layout_alignParentTop="true">
+     
+            
+            <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:id="@+id/notice_Lay" android:background="#ffffb400" android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/notice_del" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_notice_del" android:layout_alignParentRight="true" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/white" android:id="@+id/notice_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/notice_del" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@+id/aof_li_baseInfo" android:background="@color/white_90_transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/notice_Lay">
+                    <RelativeLayout android:id="@+id/aof_rl_baseInfo" android:background="@color/white" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/aof_iv_change1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/img_arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <TextView android:id="@+id/aof_tv_noAddress" android:visibility="gone" android:text="@string/tip_fill_address" android:layout_toLeftOf="@id/aof_iv_change1" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                        <ImageView android:id="@+id/aof_address_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/img_arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <RelativeLayout android:id="@+id/aof_rl_addressInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/aof_address_arrow" android:layout_centerVertical="true">
+                            
+              <LinearLayout 
+			    android:id="@+id/select_address"
+        	    android:orientation="vertical"
+        	    android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+	              
+		                	
+	                   <TextView
+	                      android:id="@id/textAdress2"
+	                      android:textSize="14.0dip"
+	                       android:textColor="@color/bg_gray_light" 
+	                       android:text="收货人：" 
+	                       android:drawableLeft="@drawable/ic_night_comfirm_consignee" 
+	                       android:drawablePadding="4.0dip" 
+	                       android:layout_alignParentTop="true" 
+	                       style="@style/txt_cell_title" 
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:gravity="right"
+	                      android:maxWidth="200.0dip"
+	                      />
+	                        
+	                    <TextView
+	                      android:id="@id/textAdress3"
+	                     android:textSize="14.0dip" android:textColor="@color/bg_gray_light"
+	                      android:layout_width="fill_parent" 
+	                      android:layout_height="wrap_content"
+	                       android:layout_marginTop="10.0dip" 
+	                       android:singleLine="true" android:drawableLeft="@drawable/ic_night_comfirm_address" android:drawablePadding="4.0dip" android:layout_below="@id/textAdress2"  />
+	                 
+	                    </LinearLayout>
+                      </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@+id/aof_ll_toPayProducts" android:background="@color/white_90_transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/aof_li_baseInfo">
+                    <RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@+id/aof_rl_toPayProducts" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/aof_change_arrow" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/img_arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <ImageView android:id="@+id/aof_iv_change2" android:visibility="visible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/ic_night_comfirm_end" android:layout_toLeftOf="@id/aof_change_arrow" android:layout_centerVertical="true" />
+                        <HorizontalScrollView android:id="@+id/aof_hsv_products" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="6.0dip" android:minHeight="30.0dip" android:layout_weight="1.0" android:layout_toLeftOf="@id/aof_iv_change2" android:layout_alignWithParentIfMissing="true">
+                            <LinearLayout android:orientation="horizontal" android:id="@+id/aof_ll_products" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        </HorizontalScrollView>
+                    </RelativeLayout>
+                    <View android:background="@color/color_e0e0e0" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/aof_hsv_products" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/txt_999999" android:id="@+id/aof_tv_productsNum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="2.0dip" android:layout_below="@id/aof_hsv_products" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@+id/aof_ll_gift" android:background="@color/white_90_transparent" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/aof_ll_toPayProducts">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:gravity="center_vertical" android:id="@+id/aof_gift_title" android:layout_width="wrap_content" android:layout_height="50.0dip" android:text="订单满额满20元赠品如下" android:layout_centerVertical="true" />
+                    <View android:background="@color/color_e0e0e0" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    <LinearLayout android:orientation="vertical" android:id="@+id/aof_gift_select" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <RelativeLayout android:gravity="center_vertical" android:visibility="gone" android:orientation="horizontal" android:id="@+id/aof_ll_redPacket" android:background="@color/white_90_transparent" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="5.0dip" android:layout_below="@id/aof_ll_gift" android:layout_alignWithParentIfMissing="true">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:id="@+id/aof_tv_redPacket" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="红包金额" android:layout_centerVertical="true" />
+                    <TextView android:textSize="14.0sp" android:textColor="@color/bg_gray_light" android:id="@+id/aof_tv_reduce" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="0.00元" android:layout_toRightOf="@id/aof_tv_redPacket" android:layout_centerVertical="true" />
+                    <ImageView android:id="@+id/aof_tv_reduce_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/img_arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/backColor" android:gravity="right" android:id="@+id/aof_tv_reduce_note" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/usable_redPacket" android:layout_toLeftOf="@id/aof_tv_reduce_arrow" android:layout_toRightOf="@id/aof_tv_reduce" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <LinearLayout android:orientation="vertical" android:id="@+id/aof_ll_payway" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/aof_ll_redPacket">
+                    <RelativeLayout android:gravity="center_vertical" android:id="@+id/aof_rl_payBalance" android:background="@color/white_90_transparent" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+                        <ImageView android:id="@+id/aof_tb_choose" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/img_switch_on" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:id="@+id/tv_night_order_yue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="使用余额" />
+                        <TextView android:textSize="14.0sp" android:textColor="@color/txt_ff8200" android:id="@+id/aof_iv_top_up" android:background="@drawable/bg_login_input_edittext_focus" android:paddingLeft="6.5dip" android:paddingTop="1.0dip" android:paddingRight="6.5dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="3.0dip" android:text="@string/txt_to_recharge" android:layout_toRightOf="@id/tv_night_order_yue" />
+                        <ImageView android:id="@+id/aof_iv_hot" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:src="@drawable/icon_hot" android:layout_toRightOf="@id/tv_night_order_yue" android:layout_alignTop="@id/tv_night_order_yue" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/bg_gray_light" android:id="@+id/aof_tv_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:layout_marginBottom="5.0dip" android:text="余额 0.0元" android:layout_below="@id/tv_night_order_yue" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/txt_999999" android:id="@+id/aof_tv_use" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="使用 0.0元" android:layout_toRightOf="@id/aof_tv_content" android:layout_alignTop="@id/aof_tv_content" />
+                    </RelativeLayout>
+                    <View android:id="@+id/aof_rl_payBalance_line" android:background="@color/color_e0e0e0" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+                    <RelativeLayout android:visibility="gone" android:gravity="center_vertical" android:id="@+id/aof_rl_creditPackage" android:background="@color/white_90_transparent" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/aof_tb_choose_creditPackage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/img_switch_on" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:id="@+id/tv_order_creditPackage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/mine_txt_my_loan" />
+                        <TextView android:textSize="14.0sp" android:textColor="@color/txt_ff8200" android:id="@+id/aof_iv_creditPackage" android:background="@drawable/bg_login_input_edittext_focus" android:paddingLeft="6.5dip" android:paddingTop="1.0dip" android:paddingRight="6.5dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="3.0dip" android:text="@string/mine_txt_my_loan" android:layout_toRightOf="@id/tv_order_creditPackage" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/bg_gray_light" android:id="@+id/aof_tv_content_creditPackage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:layout_marginBottom="5.0dip" android:text="天天花余额 0.0元" android:layout_below="@id/tv_order_creditPackage" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/txt_999999" android:id="@+id/aof_tv_use_creditPackage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="使用 0.0元" android:layout_toLeftOf="@id/aof_tb_choose_creditPackage" android:layout_toRightOf="@id/aof_tv_content_creditPackage" android:layout_alignTop="@id/aof_tv_content_creditPackage" />
+                    </RelativeLayout>
+                    <View android:id="@+id/grd_tv_use_grdCreditPackage_line" android:background="@color/color_e0e0e0" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+                    <TextView android:textSize="13.0sp" android:textColor="@color/bg_gray_light" android:gravity="center_vertical" android:id="@+id/grd_tv_use_grdCreditPackage" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="使用 0.0元" android:drawableLeft="@drawable/ic_grd_useddp_tip" android:drawablePadding="6.0dip" android:layout_below="@id/tv_order_creditPackage" />
+                </LinearLayout>
+                <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:id="@+id/tv_jinezhekou" android:paddingLeft="1.0dip" android:layout_margin="9.0dip" android:text="金额折扣" android:layout_below="@id/aof_ll_payway" style="@style/txt_cell_title" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/aof_ll_amount" android:background="@drawable/selector_bg_white_press_gray" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_below="@id/tv_jinezhekou">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="商品总金额" android:ems="5" />
+                    <TextView android:textSize="14.0sp" android:textColor="@color/bg_gray_light" android:id="@+id/aof_tv_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.00元" />
+                </LinearLayout>
+                <LinearLayout android:visibility="gone" android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_order_redpacket_zhekou" android:background="@drawable/selector_bg_white_press_gray" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/aof_ll_amount">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="红包折扣" android:ems="5" />
+                    <TextView android:textSize="14.0sp" android:textColor="@color/bg_gray_light" android:id="@+id/tv_order_redpacket_zhekou" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.00元" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_order_other_zhekou" android:background="@drawable/selector_bg_white_press_gray" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/ll_order_redpacket_zhekou">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="其他折扣" android:ems="5" />
+                    <TextView android:textSize="14.0sp" android:textColor="@color/bg_gray_light" android:id="@+id/tv_order_other_zhekou" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.00元" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/aof_ll_prosperity" android:background="@drawable/selector_bg_white_press_gray" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/ll_order_other_zhekou">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/txt_333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="应付金额" android:ems="5" />
+                    <TextView android:textSize="14.0sp" android:textColor="@color/backColor" android:id="@+id/aof_tv_prosperity_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.00元" />
+                </LinearLayout>
+                <View android:background="@color/color_e0e0e0" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/aof_ll_amount" />
+                <View android:background="@color/color_e0e0e0" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/ll_order_redpacket_zhekou" />
+                <View android:background="@color/color_e0e0e0" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/ll_order_other_zhekou" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@+id/aof_ll_payStyle" android:background="@color/white_90_transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/aof_ll_prosperity">
+                    <TextView android:textColor="@color/txt_333" android:id="@+id/aof_tv_payStyle_label" android:background="@color/color_e0e0e0" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cart_txt_payStyle" />
+                    <ListView android:id="@+id/aof_lv_payStyle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:divider="@color/transparent" />
+                    <View android:background="#ffd2d5d6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/ll_order_other_payment" android:background="#fffafafa" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                        <TextView android:textSize="13.0sp" android:textColor="@color/backColor" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="其他支付方式" />
+                        <ImageView android:id="@+id/iv_order_other_payment_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/btn_order_zhankai" />
+                    </LinearLayout>
+                    
+                    <RadioGroup 
+        android:id="@+id/ll_order_sel_payment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <RadioButton 
+            android:id="@+id/lll_order_ali_payment"
+            android:textSize="13.0sp" android:textColor="@color/backColor" android:checked="true" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="支付宝" >
+         </RadioButton>
+        <RadioButton 
+            android:id="@+id/lll_order_weixin_payment"
+            android:textSize="13.0sp" android:textColor="@color/backColor" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="微信支付" >
+         </RadioButton>
+        <RadioButton 
+            android:id="@+id/lll_order_wangyin_payment"
+            android:textSize="13.0sp" android:textColor="@color/backColor" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="网银支付" >
+        </RadioButton>
+        
+    </RadioGroup>
+                    
+                    
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/aof_ll_deliveryTime" android:background="@color/white_90_transparent" android:paddingLeft="15.0dip" android:paddingTop="10.0dip" android:paddingRight="15.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="5.0dip" android:layout_below="@id/aof_ll_payStyle">
+                    <TextView android:text="@string/cart_txt_deliveryTime" style="@style/txt_cell_title" />
+                    <TextView android:textColor="@color/backColor" android:gravity="right" android:id="@+id/aof_tv_deliveryTime" android:text="一天" android:layout_weight="1.0" style="@style/txt_cell_title" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/img_arrows" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/aof_ll_message" android:background="@drawable/selector_bg_white_press_gray" android:paddingLeft="10.0dip" android:paddingTop="12.0dip" android:paddingRight="10.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="3.0dip" android:layout_below="@id/aof_ll_deliveryTime">
+                    <EditText android:textSize="15.0sp" android:textColor="@color/txt_999999" android:textColorHint="@color/txt_999999" android:id="@+id/aof_et_message" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="给店长留言" />
+                </LinearLayout>
+                <View android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_below="@id/aof_ll_prosperity" />
+            </RelativeLayout>
+                <!-- 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_address_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+			<LinearLayout 
+			    android:id="@+id/select_address"
+        	    android:orientation="vertical"
+        	    android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+	                <TextView
+	                    android:id="@+id/payment_address_text"
+	                    style="@style/style_16_666666"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginRight="20.0dip"
+	                    android:text="@string/payLableSignNoAddressMsg" />
+		                	
+	                   <TextView
+	                      android:id="@id/textAdress2"
+	                      style="@style/style_12_666666_BOLD"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:gravity="right"
+	                      android:maxWidth="200.0dip"
+	                      android:text="" />
+	                        
+	                  <TextView
+	                      android:id="@id/textAdress3"
+	                      style="@style/style_12_666666_BOLD"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:gravity="right"
+	                      android:maxWidth="200.0dip"
+	                      android:text="" />
+	                 
+	                  <TextView
+	                      android:id="@id/textAdress4"
+	                      style="@style/style_12_666666_BOLD"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content"
+	                      android:layout_alignParentRight="true"
+	                      android:gravity="right"
+	                      android:maxWidth="200.0dip"
+	                      android:text="" />
+	                    </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+
+            </RelativeLayout>
+            
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_payType_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="5.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_payHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orderDetailLablePayType" />
+
+                <TextView
+                    android:id="@+id/payment_payValue_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_toRightOf="@id/payment_payHint_text" 
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+			<ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+			                            
+            <RelativeLayout
+                
+                android:clickable="true"
+                android:id="@+id/payment_sendTime_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_sendTimeHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orderDetailLablePfNeed" />
+
+                <TextView
+                   
+                    android:id="@+id/payment_sendTimeValue_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_toRightOf="@id/payment_sendTimeHint_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_invoice_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_invoiceHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orderDetailLableHiteInvoiceTopTitleName" />
+
+                <TextView
+                    android:id="@+id/payment_invoiceValue_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_below="@id/payment_invoiceHint_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/payment_remark_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:padding="10.0dip" >
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/payment_remarkHint_text"
+                    style="@style/style_16_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payLableSignLeaveMsg" />
+
+                <TextView
+                    android:id="@+id/payment_remarkView_text"
+                    style="@style/style_16_507FD8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_below ="@id/payment_remarkHint_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/style_18_000000_BOLD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="2.0dip"
+                    android:paddingTop="5.0sp"
+                    android:text="@string/payLableProdDetail" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/payment_product_list"
+                android:layout_width="fill_parent"
+            	android:layout_height="200dip"
+           		android:layout_centerHorizontal="true"
+            	android:layout_margin="10.0dip"
+            	android:cacheColorHint="#00000000"
+            	android:footerDividersEnabled="false"
+            	android:headerDividersEnabled="true"
+            	android:listSelector="@anim/shape_rounded_selectable"  />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/style_14_4B4B4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5.0dip"
+                    android:text="@string/payLableProdAmoutCount" />
+
+                <TextView
+                    
+                    android:id="@+id/shopcar_total_buycount_text"
+                    style="@style/style_14_A10D0B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5.0dip"
+                    android:text="" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    style="@style/style_14_4B4B4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5.0dip"
+                    android:text="@string/payLableProdPresentExpCount" />
+
+                <TextView
+                    android:id="@+id/shopcar_total_bonus_text"
+                    style="@style/style_14_A10D0B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5.0dip"
+                    android:text="" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/style_14_4B4B4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5.0dip"
+                    android:text="@string/payLableProdMoTotal" />
+
+                <TextView
+                    android:id="@+id/shopcar_total_money_text"
+                    style="@style/style_18_A10D0B_BOLD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5.0dip"
+                    android:text="" />
+            </RelativeLayout>
+             
+        </LinearLayout>
+         -->
+    </ScrollView>
+   </RelativeLayout>
+</RelativeLayout>

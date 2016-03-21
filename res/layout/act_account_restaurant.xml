@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:background="#ffefefef" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:background="@drawable/bg_user_profile" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginRight="12.0dip" android:layout_toLeftOf="@+id/btn_user_setting" android:layout_alignParentTop="true">
+                    <ImageView android:id="@+id/btn_message_center" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_message_bell_selector" />
+                    <TextView android:textSize="10.0dip" android:textColor="@color/white" android:gravity="center" android:id="@+id/tv_message_tip" android:background="@drawable/circle_solid_red" android:visibility="gone" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginTop="5.0dip" android:layout_alignRight="@id/btn_message_center" />
+                </RelativeLayout>
+                <ImageView android:id="@id/btn_user_setting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginRight="12.0dip" android:src="@drawable/btn_setting_selector" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <RelativeLayout android:id="@+id/my_ll_user_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/btn_user_setting" android:layout_centerHorizontal="true">
+                    <ImageView android:layout_width="75.0dip" android:layout_height="75.0dip" android:src="@drawable/bg_user_header_trans" android:layout_centerInParent="true" />
+                    <ImageView android:layout_width="68.0dip" android:layout_height="68.0dip"  android:id="@+id/myiv_user_header" android:scaleType="fitCenter" android:layout_centerInParent="true"  />
+                   <!--  <com.ndol.sale.starter.patch.ui.widget.CircularImageView android:id="@+id/iv_user_header" android:layout_width="68.0dip" android:layout_height="68.0dip" android:scaleType="fitCenter" android:layout_centerInParent="true" /> -->
+                </RelativeLayout>
+                <RelativeLayout android:id="@+id/ll_has_logon" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/my_ll_user_header">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:gravity="center" android:id="@+id/my_name_text" android:paddingTop="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="MyAcount" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/backColor" android:gravity="center" android:id="@+id/my_tv_user_phone" android:paddingTop="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="18973137314" android:layout_below="@id/my_name_text" />
+                    <LinearLayout android:visibility="gone" android:orientation="horizontal" android:id="@+id/ll_user_account" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_below="@id/tv_user_phone">
+                        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/fm_ll_myBalance" android:background="@drawable/bg_white_gray" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                            <TextView android:textSize="14.0dip" android:textColor="#ff333333" android:gravity="center_vertical" android:id="@+id/tv_balance_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="余额" android:layout_toRightOf="@id/view_mid_line" android:layout_centerVertical="true" />
+                            <TextView android:textSize="14.0dip" android:textColor="#ffff8400" android:gravity="center_vertical" android:id="@id/tv_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/tv_balance_title" android:layout_centerVertical="true" />
+                        </LinearLayout>
+                        <View android:background="#ffdddddd" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="16.0dip" android:layout_marginBottom="16.0dip" />
+                        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/fm_ll_myScore" android:background="@drawable/bg_white_gray" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                            <TextView android:textSize="14.0dip" android:textColor="#ff333333" android:gravity="center_vertical" android:id="@id/tv_tianj_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="天金" android:layout_toLeftOf="@id/tv_tianj" android:layout_centerVertical="true" />
+                            <TextView android:textSize="14.0dip" android:textColor="#ffff8400" android:gravity="center_vertical" android:id="@id/tv_tianj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+                        </LinearLayout>
+                        <View android:background="#ffdddddd" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="16.0dip" android:layout_marginBottom="16.0dip" />
+                        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/fm_ll_myLoan" android:background="@drawable/bg_white_gray" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                            <TextView android:textSize="14.0dip" android:textColor="#ff333333" android:gravity="center_vertical" android:id="@id/tv_loan_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="天天花" android:layout_toLeftOf="@id/tv_loan" android:layout_centerVertical="true" />
+                            <TextView android:textSize="14.0dip" android:textColor="#ffff8400" android:gravity="center_vertical" android:id="@id/tv_loan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@id/fm_ll_applyfor"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20.0dip"
+                android:paddingRight="20.0dip"
+                android:visibility="gone" >
+
+                <ImageView android:id="@id/iv_applyfor" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_mine_applyfor" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0dip" android:textColor="#ffff8400" android:id="@id/txt_applyfor" android:paddingLeft="7.0dip" android:text="@string/mine_txt_applyfor" android:layout_toRightOf="@id/iv_applyfor" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_account_a" android:background="@drawable/bg_white_gray" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50.0dip"
+                    android:paddingLeft="20.0dip"
+                    android:paddingRight="20.0dip"
+                    android:visibility="gone" >
+
+                    <ImageView android:id="@id/iv_my_share" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_share" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:paddingLeft="7.0dip" android:text="@string/mine_txt_share" android:layout_toRightOf="@id/iv_my_share" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_account_address_manage" android:background="@drawable/bg_white_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip">
+                <RelativeLayout android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                    <ImageView android:id="@id/iv_my_recommend" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_my_recommend" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:paddingLeft="7.0dip" android:text="@string/mine_txt_my_recommend" android:layout_toRightOf="@id/iv_my_recommend" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/fm_ll_myfive" android:background="@drawable/bg_white_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50.0dip"
+                    android:paddingLeft="20.0dip"
+                    android:paddingRight="20.0dip"
+                    android:visibility="gone" >
+
+                    <ImageView android:id="@+id/iv_my_five" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_my_five" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:paddingLeft="7.0dip" android:text="@string/mine_txt_my_five" android:layout_toRightOf="@id/iv_my_five" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+                </RelativeLayout>
+            </LinearLayout>
+            <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginBottom="10.0dip" />
+            <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_account_myorder" android:background="@drawable/bg_white_gray" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="10.0dip">
+                <ImageView android:id="@+id/iv_all_order" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_order_all" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:paddingLeft="7.0dip" android:text="@string/mine_txt_myOrder" android:layout_toRightOf="@id/iv_all_order" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fm_ll_salary"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginTop="1.0dip"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20.0dip"
+                android:paddingRight="20.0dip"
+                android:visibility="gone" >
+
+                <ImageView android:id="@+id/iv_my_salary" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_salary" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:paddingLeft="7.0dip" android:text="@string/mine_txt_salary" android:layout_toRightOf="@id/iv_my_salary" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fm_ll_redPacket"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginTop="1.0dip"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20.0dip"
+                android:paddingRight="20.0dip"
+                android:visibility="gone" >
+
+                <ImageView android:id="@+id/iv_my_redpacket" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_red_packet" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:paddingLeft="7.0dip" android:text="@string/mine_txt_redPacket" android:layout_toRightOf="@id/iv_my_redpacket" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/fm_ll_serviceTel" android:background="@drawable/bg_white_gray" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="1.0dip">
+                <ImageView android:id="@+id/iv_service_tel" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_kefu_phone" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:id="@+id/tv_service_tel_title" android:paddingLeft="7.0dip" android:text="@string/mine_txt_callCenter" android:layout_toRightOf="@id/iv_service_tel" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <TextView android:textColor="#ff333333" android:layout_marginLeft="19.0dip" android:text="@string/mine_txt_serviceTel" android:layout_toRightOf="@id/tv_service_tel_title" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <ImageView android:id="@+id/img_service_tel_arrows" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fm_ll_msgCenter"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginTop="1.0dip"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20.0dip"
+                android:paddingRight="20.0dip"
+                android:visibility="gone" >
+
+                <ImageView android:id="@+id/iv_mine_msgcenter" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_mine_msgcenter" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:id="@+id/tv_mine_msgcenter_content" android:paddingLeft="7.0dip" android:text="@string/mine_txt_mine_center" android:layout_toRightOf="@id/iv_mine_msgcenter" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <TextView android:textSize="10.0dip" android:textColor="#ffe50909" android:gravity="center" android:id="@+id/tv_mine_msgcenter_text" android:background="@drawable/ic_mine_msgcenter_numbg" android:paddingLeft="5.0dip" android:paddingTop="1.0dip" android:paddingRight="5.0dip" android:paddingBottom="1.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:layout_toRightOf="@id/tv_mine_msgcenter_content" android:layout_centerVertical="true" />
+                <ImageView android:id="@+id/img_mine_msgcenter_arrows" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/fm_ll_help_feedback" android:background="@drawable/bg_white_gray" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="1.0dip">
+                <ImageView android:id="@+id/iv_help_feedback" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/icon_help_feedback" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:paddingLeft="7.0dip" android:text="@string/mine_txt_help_feedback" android:layout_toRightOf="@id/iv_help_feedback" android:layout_centerVertical="true" style="@style/txt_cell_title" />
+                <ImageView android:id="@+id/img_help_feedback_arrows" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/img_arrows" />
+            </RelativeLayout>
+            <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <Button android:textSize="20.0sp" android:textColor="@color/white" android:id="@+id/fm_btn_loginStatus" android:background="@drawable/pub_rounded_nobg_frame_white" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/mine_txt_loginOff" />
+            <Button android:textSize="20.0dip" android:textColor="@color/white" android:id="@+id/fm_btn_login" android:background="@drawable/button_theme_selector" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="您尚未登录，点此登录" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

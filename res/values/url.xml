@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="sysRequestCharacter">UTF-8</string>
-    <string name="sysRequestHost">http://192.168.1.26:8080/ECServer_D/</string>
     
+    <string name="sysRequestHost">http://192.168.1.17:8080/ECServer_D/</string>
+   <!-- 
+    <string name="sysRequestHost">http://192.168.1.111:8080/ECServer_D/</string>
+      -->
     <string name="sysRequestServLet">BusiServlet</string>
     <string name="sysRequestLoginServLet">LoginServlet</string>
     <string name="sysRequestGetDataFlag">data</string>
     
-    <string name="url_version">version</string>
-    <string name="url_addresslist">addresslist</string>
-    <string name="url_home">home</string>
-    <string name="url_addresssave">addresssave</string>
-    <string name="url_addressdelete">addressdelete</string>
-    <string name="url_addressdefault">addressdefault</string>
-    <string name="url_limitbuy">limitbuy</string>
-
-    <string name="url_newproduct">newproduct</string>
-    <string name="url_hotproduct">hotproduct</string>
-    <string name="url_brand">brand</string>
-
-    <string name="url_logout">logout</string>
-    <string name="url_cartdatasession">cartdatasession</string>
-    <string name="url_productcollect">product/collect</string>
-
 </resources> 

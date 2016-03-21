@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+     <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+     
+      <style name="RatingBar.Grey" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxHeight">11.0dip</item>
+        <item name="android:progressDrawable">@drawable/rating_bar_grey_bg</item>
+        <item name="android:minHeight">11.0dip</item>
+    </style>
+        <style name="CommonSplitLine">
+        <item name="android:background">#ffcccccc</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+    </style>
+    
     <style name="style_18_BEBEBE_BOLD">
         <item name="android:textSize">18.0sp</item>
         <item name="android:textStyle">bold</item>
@@ -447,5 +471,74 @@
         <item name="actionBarItemBackground">@drawable/abc_item_background_holo_light</item>
          <item name="selectableItemBackground">@drawable/abc_item_background_holo_light</item>
     </style>
+    
+     <style name="title_right_button">
+        <item name="android:paddingLeft">@dimen/title_rightButton_padding</item>
+        <item name="android:paddingRight">@dimen/title_rightButton_padding</item>
+        <item name="android:clickable">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/back_button_default_style</item>
+    </style>
          
+     
+     <style name="txt_cell_title">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/txt_333</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">10.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    
+      <style name="txt_title_black">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="img_arrows">
+        <item name="android:background">@drawable/img_arrows</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="line_horizontal">
+        <item name="android:background">@color/line_light</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+    </style>
+      
+    
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+
+    <style name="CustomProgressDialog" parent="@style/CustomDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+     <style name="PopupAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit</item>
+    </style>
+
+    <style name="MyDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@anim/slide_in_from_bottom</item>
+    </style>
+    
+     <style name="translucent_theme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    
 </resources>

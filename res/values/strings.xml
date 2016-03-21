@@ -2,81 +2,14 @@
 <resources>
     
     <string name="hello">廉盟超市部欢迎您!</string>
-    
     <string name="app_name">廉盟</string>
     <string name="net_error">当前网络不可用，请先连接Internet！</string>
-	<string name="my_account_title">我的账户</string>
-	<string name="my_ordr_title">我的订单</string>
-	<string name="address_manage_title">地址管理</string>
-	<string name="my_favorite_title">收藏夹</string>
-	<string name="recent_browse_title">最近浏览</string>
-	<string name="menu_home">主页</string>
-	<string name="menu_search">搜索</string>
-	<string name="menu_favorites">收藏夹</string>
-	<string name="menu_myorder">我的订单</string>
-	<string name="menu_history">浏览历史</string>
-	<string name="menu_exit">退出</string>
-	<string name="about_title">关 于</string>
-	<string name="about_comp">廉盟超市合作计划</string>
-	<string name="more">更多</string>
-	<string name="category_title">分类</string>
-	<string name="no_information">加载中...</string>
-	<string name="loadTitle"><strong>正在更新数据</strong></string>
-	<string name="LoadContent"><strong>请稍候……</strong></string>
 	<string name="sales">销量</string>
-	
-	<string name="price">价格</string>
-	<string name="goodDegree">好评度</string>
-	<string name="groundingTime">上架时间</string>
-	<string name="goback">返回</string>
-	<string name="prod_detail">商品详情</string>
-	<string name="shopcar">加入购物车</string>
-	<string name="collect">收藏</string>
-	<string name="prom_bulletin">促销快报</string>
-	<string name="help_title">帮助中心</string>
-	<string name="ordr_tel">1897313</string>
-	
-	
-	<string name="downning">正在下载</string>
-	<string name="down_error">下载失败</string>
-	<string name="address_manager_add">新增地址</string>
-	<string name="custom_title_back">返回</string>
-	<string name="please_input_product_name">请输入您要搜索的商品</string>
-	<string name="address_select_area">选择地区</string>
-	<string name="address_select_city">选择城市</string>
-	<string name="address_select_province">选择省份</string>
-	<string name="delete_success">删除成功</string>
-	<string name="yes">是</string>
+    <string name="yes">是</string>
 	<string name="no">否</string>
-	<string name="toast">提示</string>
-	<string name="add_succuess">添加成功!</string>
-	<string name="edit_success">修改成功</string>
-	<string name="address_manage">地址管理</string>
-	<string name="select_address">选择地址</string>
-	<string name="check_out">结算中心</string>
-	<string name="set_success">设置成功</string>
-	<string name="category_view">分类浏览</string>
-	<string name="clear">清空</string>
-	
-    <string name="uphandcheckout">提交订单</string>  
-    <string name="uphandsuccess">提交成功</string>  
-    
     <string name="home">首页</string>
     <string name="find">发现</string>
     <string name="order">订单</string>
-    <string name="mine">我的</string>
-    
-    <string name="refresh_down_text">下拉刷新</string>
-    <string name="refresh_release_text">上拉</string>
-    
-    <string name="btn_scroll_view">ScrollView demo</string>
-    <string name="btn_list_view">ListView demo</string>
-
-    <string name="header_hint_refresh_normal">Pull to refresh</string>
-    <string name="header_hint_refresh_ready">Release to refresh</string>
-    <string name="header_hint_refresh_loading">Refreshing&#8230;</string>
-    <string name="header_hint_refresh_time">Time：</string>
-    <string name="footer_hint_load_normal">Load more</string>
-    <string name="footer_hint_load_ready">Release to load more</string>
+    <string name="mine">我的</string>  
     
 </resources>

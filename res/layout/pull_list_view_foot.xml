@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="60.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="16.0sp" android:textColor="#ff404040" android:id="@id/tv_foot_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
-    <ProgressBar android:id="@id/pb_foot_refreshing" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="15.0dip" android:indeterminateDrawable="@drawable/pull_list_view_progressbar" android:indeterminateDuration="1000" android:layout_toLeftOf="@id/tv_foot_title" android:layout_centerVertical="true" style="?android:attr/progressBarStyleSmall" />
-</RelativeLayout>

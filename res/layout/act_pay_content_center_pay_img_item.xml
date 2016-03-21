@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/pub_rounded_bg_white_frame_gray_no_selector" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/item_iv_image" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/goods_loading" android:scaleType="fitXY" />
+        <TextView android:textSize="13.0dip" android:textColor="@color/backColor" android:gravity="center" android:id="@+id/item_iv_image_text" android:background="@drawable/grd_bg_payfenqi" android:paddingLeft="4.0dip" android:paddingRight="4.0dip"   android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="3期"  />
+       
+    </LinearLayout>
+</LinearLayout>

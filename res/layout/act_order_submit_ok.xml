@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/title_view_new"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:gravity="center_vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/lay_title_type"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_title_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="支付完成"
+                    android:textColor="@color/backColor"
+                    android:textSize="20.0dip" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="15.0dip" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="15.0dip" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="290.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@anim/shape_rounded_rectangle"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="1.0dip" >
+
+                <TextView
+                    android:id="@+id/orderid_value_text"
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5.0dip"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="1.0dip"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/paymoney_text"
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5.0dip"
+                    android:text="@string/orderDetailLableProdPayAmount" />
+
+                <TextView
+                    android:id="@+id/paymoney_value_text"
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/paymoney_text"
+                    android:padding="5.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="1.0dip"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/paytype_text"
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5.0dip"
+                    android:text="@string/orderDetailLablePayType" />
+
+                <TextView
+                    android:id="@+id/paytype_value_text"
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/paytype_text"
+                    android:padding="5.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="15.0dip"
+                android:padding="5.0dip" >
+
+                <TextView
+                    style="@style/style_15_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5.0dip"
+                    android:paddingBottom="15dp"
+                    android:text="@string/orderDetailLableFinished" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+         >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+        <TextView
+            android:id="@+id/to_ordr_detail_text"
+            style="@style/style_20_FFFFFF_BOLD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/act_submit_ok_light_red"
+            android:gravity="center"
+            android:text="@string/orderDetailLableProdViewOrder" />
+
+        <TextView
+            android:id="@+id/continue_shoping_text"
+            style="@style/style_20_FFFFFF_BOLD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/act_submit_ok_orange"
+            android:gravity="center"
+            android:text="@string/orderDetailLableProdContinuShop" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

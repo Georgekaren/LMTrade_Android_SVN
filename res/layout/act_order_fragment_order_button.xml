@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:id="@+id/tv001" android:background="@color/red" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="fragment_shopping_order" />
+    <RelativeLayout android:gravity="center_vertical" android:id="@+id/ll_query_order_tab"   android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_below="@id/tv001">
+        <View android:id="@+id/bg_topview_shadow" android:background="@drawable/bg_order_shadow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:orientation="horizontal" android:id="@+id/ll_query_bytime" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="15.0dip" android:textColor="#ffff8300" android:gravity="center" android:id="@+id/tab_query_bytime" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="近一月" android:layout_centerInParent="true" />
+                <RelativeLayout android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@+id/iv_time_cursor" android:padding="8.0dip" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/icon_time_chose_down" android:scaleType="fitCenter" android:layout_centerInParent="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <TextView android:textSize="15.0dip" android:textColor="#ff333333" android:gravity="center" android:id="@+id/tab_query_byunaccept" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="待收货" android:layout_weight="1.0" />
+            <TextView android:textSize="15.0dip" android:textColor="#ff333333" android:gravity="center" android:id="@+id/tab_query_byunpay" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="待支付" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView android:id="@+id/iv_querytab_cursor" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:cacheColorHint="@android:color/white" android:scaleType="matrix" android:layout_below="@id/ll_query_order_tab" />
+    <FrameLayout android:id="@+id/tab_shoppingorder_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/iv_querytab_cursor" />
+    <View android:id="@+id/menbanView" android:background="@drawable/bg_popview_mark" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/iv_querytab_cursor" />
+</RelativeLayout>

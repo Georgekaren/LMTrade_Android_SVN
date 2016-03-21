@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ListView
+        android:id="@+id/address_manage_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/listview_item_line"
+        android:listSelector="@anim/index_item_bg"
+        />
+
+</LinearLayout>
+ -->
+
+<LinearLayout android:orientation="vertical" android:background="@color/bg_acty_EFEFEF" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/aau_hv_head" layout="@layout/act_address_title" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ListView android:id="@+id/address_manage_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="4.0dip" android:divider="@color/transparent" android:dividerHeight="4.0dip" />
+        <TextView android:gravity="center" android:layout_gravity="center" android:id="@+id/aal_tv_noDataa"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/txt_noAddress_toAdd" />
+    </LinearLayout>
+</LinearLayout>
